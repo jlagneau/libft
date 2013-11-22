@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:21 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:30:30 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 14:04:30 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		toupper(int c)
+int		ft_tolower(int c)
 {
 	if (c > 64 && c < 91)
 		return (c + 32);
