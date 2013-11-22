@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:53 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 13:59:10 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 18:46:05 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ char	*ft_strncpy(char *s1, const char *s2, size_t n)
 	s = s2;
 	while (n-- && *s != '\0')
 		*d++ = *s++;
+	*(d + 1) = '\0';
 	return (s1);
 }

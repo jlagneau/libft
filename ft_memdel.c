@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:32 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:33:36 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 17:13:41 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 void	ft_memdel(void **ap)
 {
 	free(*ap);
-	free(ap);
-	ap = NULL;
+	*ap = NULL;
 }
