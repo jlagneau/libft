@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 15:46:39 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 15:51:26 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_strsplit(char const *s, char c)
 	{
 		while (*s != c)
 		{
-			*s = *s;
+			s++;
 		}
 	}
 	return ((char **) s);
