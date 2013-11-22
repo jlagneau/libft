@@ -6,22 +6,22 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:02 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:38:06 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 09:51:18 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	char	*d;
-	char	*s;
+	char		*d;
+	const char	*s;
 
-	d = dest;
-	s = (char *) src;
-	d += ft_strlen(dest);
-	while (*s != '\0')
+	d = s1;
+	s = s2;
+	d += ft_strlen(d);
+	while (*s)
 		*d++ = *s++;
-	*d = '\0';
-	return (dest);
+	*(d + 1) = '\0';
+	return (s1);
 }

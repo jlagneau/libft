@@ -6,30 +6,19 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:37:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:41:43 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 10:22:02 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char		*tmp;
 
-	d = dest;
-	s = src;
-	if (s < d)
-	{
-		d += n;
-		s += n;
-		while (n--)
-			*d-- = *s--;
-	}
-	else
-	{
-		while (n--)
-			*d++ = *s++;
-	}
-	return (dest);
+	tmp = malloc(n);
+	ft_memcpy(tmp, s2, n);
+	ft_memcpy(s1, tmp, n);
+	free(tmp);
+	return (s1);
 }

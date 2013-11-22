@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:42:16 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 09:23:58 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *src1;
-	unsigned char *src2;
+	unsigned char *tmp1;
+	unsigned char *tmp2;
 
-	src1 = (unsigned char *) s1;
-	src2 = (unsigned char *) s2;
+	tmp1 = (unsigned char *) s1;
+	tmp2 = (unsigned char *) s2;
 	while (n--)
 	{
-		if (*src1 != *src2)
-			return (src1 - src2);
-		src1++;
-		src2++;
+		if (*tmp1 != *tmp2)
+			return (tmp1 - tmp2);
+		tmp1++;
+		tmp2++;
 	}
 	return (0);
 }
