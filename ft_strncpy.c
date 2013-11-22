@@ -6,11 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:53 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 09:45:14 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 13:52:44 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
@@ -21,7 +22,5 @@ char	*ft_strncpy(char *s1, const char *s2, size_t n)
 	s = s2;
 	while (n-- && *s != '\0')
 		*d++ = *s++;
-	while (n--)
-		*d++ = '\0';
 	return (s1);
 }

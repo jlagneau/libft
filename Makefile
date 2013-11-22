@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/11/22 11:22:34 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/11/22 11:30:47 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
@@ -46,6 +46,7 @@ SRCS = ft_memset.c \
 	   ft_isalpha.c \
 	   ft_isdigit.c \
 	   ft_isalnum.c \
+	   ft_isascii.c \
 	   ft_isprint.c \
 	   ft_toupper.c \
 	   ft_tolower.c \

@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:35:38 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:35:59 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 12:12:41 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ static int		ft_strip_front_sign(char *s)
 	return (1);
 }
 
-int				ft_atoi(const char *nptr)
+int				ft_atoi(const char *str)
 {
 	int			op;
 	int			ret;
 	int			i;
 	char		*s;
 
-	s = (char *) nptr;
+	s = (char *) str;
 	op = 1;
 	ret = 0;
 	i = 0;
