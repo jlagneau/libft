@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:19 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:41:13 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 07:26:38 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	tmp = s;
 	while (n--)
-	{
-		*tmp++ = c;
-	}
+		*tmp++ = (unsigned char) c;
 	return (s);
 }

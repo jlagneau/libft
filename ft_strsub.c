@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:38:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 07:22:35 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 09:08:36 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/11/21 09:19:42 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*d;
+	char	*sub;
+	int		i;
 
-	d = dest;
-	while (*d)
-		*d++ = *src++;
-	return (dest);
+	i = 0;
+	sub = NULL;
+	sub = (char *) malloc(len * sizeof(char *));
+	if (sub == NULL)
+		return (NULL);
+	while (len--)
+	{
+		sub[i] = *(s + start + i);
+		i++;
+	}
+	return (sub);
 }

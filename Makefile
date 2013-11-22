@@ -6,12 +6,12 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/11/21 08:30:07 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/11/21 14:04:03 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -g -I.
 
 AR = ar
 ARFLAGS = rcs
@@ -57,6 +57,9 @@ SRCS = ft_memset.c \
 	   ft_striter.c \
 	   ft_strequ.c \
 	   ft_strnequ.c \
+	   ft_strsub.c \
+	   ft_strjoin.c \
+	   ft_strtrim.c \
 	   ft_itoa.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
