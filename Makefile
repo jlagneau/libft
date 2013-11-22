@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/11/22 10:40:32 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/11/22 11:22:34 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
@@ -56,6 +56,8 @@ SRCS = ft_memset.c \
 	   ft_strclr.c \
 	   ft_striter.c \
 	   ft_striteri.c \
+	   ft_strmap.c \
+	   ft_strmapi.c \
 	   ft_strequ.c \
 	   ft_strnequ.c \
 	   ft_strsub.c \

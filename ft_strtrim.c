@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:40:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 13:41:48 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/22 11:15:26 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ char			*ft_strtrim(char const *s)
 	}
 	ret = (char *) malloc(len * sizeof(char));
 	ret = ft_strcpy(ret, tmp);
-	return (tmp);
+	return (ret);
 }
