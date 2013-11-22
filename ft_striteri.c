@@ -1,17 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:38:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 10:41:23 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/22 10:35:48 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/11/22 10:42:25 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	while (*s)
-		f(s++);
+	int		i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, s);
+		i++;
+		s++;
+	}
 }
