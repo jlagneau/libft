@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/11/22 11:30:47 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/11/22 15:47:25 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
@@ -64,6 +64,7 @@ SRCS = ft_memset.c \
 	   ft_strsub.c \
 	   ft_strjoin.c \
 	   ft_strtrim.c \
+	   ft_strsplit.c \
 	   ft_itoa.c \
 	   ft_putchar.c \
 	   ft_putstr.c \
