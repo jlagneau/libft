@@ -14,7 +14,6 @@
 
 int		ft_toupper(int c)
 {
-	ft_putstr("ft_toupper");
 	if (c > 96 && c < 123)
 		return (c - 32);
 	return (c);

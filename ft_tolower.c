@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int		ft_tolower(int c)
 {
-	ft_putstr("ft_tolower");
 	if (c > 64 && c < 91)
 		return (c + 32);
 	return (c);
