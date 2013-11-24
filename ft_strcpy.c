@@ -10,13 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-
 char	*ft_strcpy(char *s1, const char *s2)
 {
 	char	*tmp;
-	ft_putstr("ft_strcpy");
+
 	tmp = s1;
 	while (*s2)
 		*tmp++ = *s2++;

@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 char	*ft_strchr(const char *s, int c)
 {
-	ft_putstr("ft_strchr");
 	while (*s != (char) c)
 	{
 		if (*s++ == '\0')

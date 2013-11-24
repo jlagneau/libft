@@ -6,15 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:20 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 10:20:46 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 13:15:14 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int		ft_isprint(int c)
 {
-	ft_putstr("ft_isprint");
 	c = (unsigned char) c;
 	if (c >= 32 && c < 127)
 		return (1);

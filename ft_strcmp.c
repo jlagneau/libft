@@ -10,14 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int     ft_strcmp(const char *s1, const char *s2)
 {
 	char	*src1;
 	char	*src2;
 
-	ft_putstr("ft_strcmp");
 	src1 = (char *) s1;
 	src2 = (char *) s2;
 	while (*src1 == *src2)
