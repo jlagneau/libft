@@ -6,13 +6,15 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:50 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 10:15:48 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 13:28:58 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 size_t	ft_strlen(char const *s)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

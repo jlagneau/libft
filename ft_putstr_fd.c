@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:32:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:32:50 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 13:31:34 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	char	*str;
+
+	str = (char *) s;
+	while (str && *str++)
+		ft_putchar_fd(*str, fd);
 }

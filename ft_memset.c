@@ -6,9 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:19 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:12:58 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 13:26:57 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

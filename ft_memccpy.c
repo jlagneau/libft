@@ -6,9 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:58 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:12:26 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 13:27:35 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
