@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:03 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:36:08 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:07:40 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int		ft_isalnum(int c)
 {
+	ft_putstr("ft_isalnum");
 	c = (unsigned char) c;
 	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);

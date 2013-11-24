@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:35:22 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:35:25 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:07:32 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	ft_putstr("ft_bzero");
 	s = ft_memset(s, 0, n);
 }

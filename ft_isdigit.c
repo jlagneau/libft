@@ -6,12 +6,16 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:34:54 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:35:03 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:20:21 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isdigit(int c)
 {
+
+	ft_putstr("ft_isdigit");
 	c = (unsigned char) c;
 	if (c > 47 && c < 58)
 		return (1);

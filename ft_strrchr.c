@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:35 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 10:24:40 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:17:38 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*src;
 
+	ft_putstr("ft_strrchr");
 	src = (char *) s + ft_strlen(s) + 1;
 	while (src != s)
 	{

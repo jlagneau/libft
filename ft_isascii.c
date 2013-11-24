@@ -6,12 +6,15 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:12 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:36:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:20:36 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_isascii(int c)
 {
+	ft_putstr("ft_isascii");
 	c = (unsigned char) c;
 	if (c >= 0 && c < 128)
 		return (1);

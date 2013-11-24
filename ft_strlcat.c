@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 10:22:30 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 10:15:31 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	int		len;
 	int		i;
 
+	ft_putstr("ft_strlcat");
 	d = dst;
 	s = (char *) src;
 	len = ft_strlen(dst);
