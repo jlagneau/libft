@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:39:15 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 16:46:12 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/24 16:49:25 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		return (src);
 	while (*src && n--)
 	{
-		if (ft_memcmp(src, s2, len) == 0)
-			return (src);
-		src++;
+		if (ft_memcmp(src++, s2, len) == 0)
+			return (src -1);
 	}
 	return (NULL);
 }
