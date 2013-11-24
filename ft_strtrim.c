@@ -6,11 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:40:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 18:20:44 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/23 11:00:39 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int		ft_isspace(int c)
 {
@@ -27,18 +28,22 @@ static char		*ft_strip_front_spaces(char *s)
 	return (s);
 }
 
+static char		*ft_strip_back_spaces(char *s)
+{
+	size_t		len;
+
+	len = ft_strlen(s) - 1;
+	while (ft_isspace(s[len]))
+		s[len--] = '\0';
+	return (s);
+}
+
 char			*ft_strtrim(char const *s)
 {
 	char	*tmp;
-	char	*ret;
-	int		len;
 
 	tmp = (char *) s;
 	tmp = ft_strip_front_spaces(tmp);
-	len = ft_strlen(tmp);
-	while (ft_isspace(tmp[len - 1]))
-		len--;
-	ret = (char *) malloc(len * sizeof(char));
-	ret = ft_strncpy(ret, tmp, len);
-	return (ret);
+	tmp = ft_strip_back_spaces(tmp);
+	return (tmp);
 }
