@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:58 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:27:35 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 14:39:05 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
+	ft_putstr("memccpy");
 	char		*d;
 	const char	*s;
 

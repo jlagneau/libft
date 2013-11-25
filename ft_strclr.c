@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:09 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:38:14 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 14:03:34 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strclr(char *s)
 {
-	ft_bzero(s, ft_strlen(s));
+	if (s != 0)
+		ft_bzero(s, ft_strlen(s));
 }

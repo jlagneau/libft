@@ -6,12 +6,15 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:32:06 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 10:20:09 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 14:42:02 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int     ft_strcmp(const char *s1, const char *s2)
 {
+	ft_putstr("strcmp");
 	char	*src1;
 	char	*src2;
 

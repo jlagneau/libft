@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:50 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:28:58 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 14:16:31 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(char const *s)
 {
 	size_t	i;
 
+	if (s == 0)
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;

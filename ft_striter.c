@@ -6,12 +6,15 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/22 10:41:23 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 14:05:06 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s)
-		f(s++);
+	if (s != 0 && f != 0)
+	{
+		while (*s)
+			f(s++);
+	}
 }
