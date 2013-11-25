@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 14:44:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 15:42:56 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int		ft_count_words(char const *s, char c)
 
 char			**ft_strsplit(char const *s, char c)
 {
+	if (s == 0)
+		return (NULL);
 	char *tmp = (char *) s;
 	tmp++;
 	c++;

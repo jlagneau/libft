@@ -1,4 +1,4 @@
-c/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
@@ -6,7 +6,7 @@ c/* ************************************************************************** *
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:22:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:24:12 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 15:41:24 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,17 @@ c/* ************************************************************************** *
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*tmp;
+	char	*ret;
 	int		len;
-	int		i;
-	int		j;
 
-	if (s1 != 0 && s2 != 0)
+	if (s1 == 0 || s2 == 0)
 		return (0);
-	tmp = NULL;
-	i = 0;
-	j = 0;
+	ret = NULL;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	tmp = (char *) malloc(sizeof(char) * (len + 1));
-	if (tmp == NULL)
-		return (NULL);
-	return (tmp);
-	while (len-- && s1[i++])
-		tmp[i] = s1[i];
-	while (len-- && s2[j])
-		tmp[i++] = s2[j++];
-	tmp[i] = '\0';
+	ret = (char *) malloc(sizeof (char) * (len + 1));
+	if (ret == NULL)
+		exit(1);
+	tmp = ft_strdup(s1);
+	ret = ft_strcat(tmp, s2);
 	return (tmp);
 }

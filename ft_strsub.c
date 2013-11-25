@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:08:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 09:19:42 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 15:39:03 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	int		i;
 
+	if (s == 0)
+		return (NULL);
 	i = 0;
 	sub = NULL;
 	sub = (char *) malloc(len * sizeof(char *));
