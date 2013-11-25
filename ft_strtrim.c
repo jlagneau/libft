@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:40:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:44:21 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 15:55:12 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ static char		*ft_strip_back_spaces(char *s)
 char			*ft_strtrim(char const *s)
 {
 	char	*tmp;
+	char	*ret;
 
 	if (s == 0)
 		return (NULL);
 	tmp = (char *) s;
 	tmp = ft_strip_front_spaces(tmp);
 	tmp = ft_strip_back_spaces(tmp);
-	return (tmp);
+	ret = (char *) malloc(sizeof (char) * ft_strlen(tmp));
+	ret = ft_strdup(tmp);
+	return (ret);
 }
