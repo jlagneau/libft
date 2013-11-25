@@ -6,15 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 14:41:39 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 15:20:17 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 char	*ft_strcpy(char *s1, const char *s2)
 {
-	ft_putstr("strcpy");
 	char		*tmp1;
 	const char	*tmp2;
 
