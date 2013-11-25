@@ -6,18 +6,18 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:20:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 16:28:37 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcpy(char *s1, const char *s2)
 {
-	char		*tmp1;
-	const char	*tmp2;
+	size_t	len;
 
-	tmp1 = s1;
-	tmp2 = s2;
-	while (*tmp2)
-		*tmp1++ = *tmp2++;
+	len = ft_strlen(s2);
+	ft_bzero(s1, len + 1);
+	ft_memcpy(s1, s2, len);
 	return (s1);
 }

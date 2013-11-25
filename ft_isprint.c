@@ -6,13 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:20 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:15:14 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 18:17:10 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
-	c = (unsigned char) c;
 	if (c >= 32 && c < 127)
 		return (1);
 	return (0);

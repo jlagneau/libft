@@ -6,13 +6,12 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:12 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 13:14:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 18:16:56 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isascii(int c)
 {
-	c = (unsigned char) c;
 	if (c >= 0 && c < 128)
 		return (1);
 	return (0);
