@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 12:05:42 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 13:13:29 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	char	*d;
-	char	*s;
-	int		len;
-	int		i;
+	size_t		len_dst;
+	size_t		len_src;
+	char		*tmp;
 
-	d = dst;
-	s = (char *) src;
-	len = ft_strlen(dst);
-	d += len;
-	i = n + len + 1;
-	while (i--)
-		*d++ = *s++;
-	*d = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
+	tmp = dst;
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	n -= len_dst;
+	if (n <= 0)
+		return (len_dst + len_src);
+	tmp += len_dst;
+	ft_memcpy(tmp, src, n);
+	return (len_dst + len_src);
 }

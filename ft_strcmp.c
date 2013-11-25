@@ -22,5 +22,5 @@ int     ft_strcmp(const char *s1, const char *s2)
 		if (*src1++ == '\0' && *src2++ == '\0')
 			return (0);
 	}
-	return ((int) *src1 - 1 < *src2 - 1);
+	return ((int) ((*src1 - 1 < *src2 - 1) < 0 ) ? -1 : 1);
 }

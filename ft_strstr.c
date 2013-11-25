@@ -17,7 +17,6 @@ char	*ft_strstr(const char *s1, const char *s2)
 	char	*src;
 	int		len;
 
-	ft_putstr("ft_strstr");
 	src = (char *) s1;
 	len = ft_strlen(s2);
 	while (*src)

@@ -19,7 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	d = s1;
 	s = s2;
-	d += ft_strlen(s1);
+	d += ft_strlen(d) + 1;
 	while (n-- && *s)
 		*d++ = *s++;
 	*(d + 1) = '\0';

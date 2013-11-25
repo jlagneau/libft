@@ -6,16 +6,18 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 10:14:56 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/25 13:12:29 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *s1, const char *s2)
 {
-	char	*tmp;
+	char		*tmp1;
+	const char	*tmp2;
 
-	tmp = s1;
-	while (*s2)
-		*tmp++ = *s2++;
+	tmp1 = s1;
+	tmp2 = s2;
+	while (*tmp2)
+		*tmp1++ = *tmp2++;
 	return (s1);
 }
