@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:33:58 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 16:54:42 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/26 19:14:21 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	char		*d;
-	const char	*s;
+    unsigned char			*d;
+	const unsigned char		*s;
 
 	d = s1;
 	s = s2;
 	while (n--)
 	{
-		if (*s && *s == (unsigned char) c)
-			return (d + 1);
+		if (*s == (unsigned char) c)
+		{
+			*d++ = *s++;
+			return (d);
+		}
 		*d++ = *s++;
 	}
 	return (NULL);
