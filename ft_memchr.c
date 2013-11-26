@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 17:42:50 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/26 17:47:57 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (n--)
 	{
 		if (*src == (unsigned char) c)
-			return src;
+			return (src);
 		src++;
 	}
 	return (NULL);
