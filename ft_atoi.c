@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:35:38 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 12:16:09 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/26 16:09:22 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,6 @@ static int		ft_exp_ten(int n)
 	while (i++ < n)
 		ret *= 10;
 	return (ret);
-}
-
-static int		ft_isspace(int c)
-{
-	c = (unsigned char) c;
-	if (c == 9 || c == 10 || c == 11 || c == 12 || c == 13 || c == 32)
-		return (1);
-	return (0);
 }
 
 static char		*ft_strip_front_spaces(char *s)

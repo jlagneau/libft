@@ -21,10 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == 0 || s2 == 0)
 		return (0);
 	ret = NULL;
-	len = ft_strlen(s1) + ft_strlen(s2);
-	ret = (char *) malloc(sizeof (char) * (len + 1));
-	if (ret == NULL)
-		exit(1);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ret = ft_strnew(len);
 	tmp = ft_strdup(s1);
 	ret = ft_strcat(tmp, s2);
 	return (tmp);

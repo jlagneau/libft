@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:08 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 16:23:29 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/26 17:22:28 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 	d = s1;
 	s = s2;
-	d += ft_strlen(d) + 1;
+	d += ft_strlen(d);
 	while (n-- && *s)
 		*d++ = *s++;
 	*(d + 1) = '\0';

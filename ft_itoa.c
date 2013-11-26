@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:34:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:34:50 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/11/26 14:29:54 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nbrlen(int const n)
+static int	ft_nbrlen(int n)
 {
 	int	i;
 	int nb;
@@ -21,7 +21,7 @@ static int	ft_nbrlen(int const n)
 	nb = n;
 	if (n == 0)
 		return (1);
-	while (nb != 0)
+	while (nb)
 	{
 		nb /= 10;
 		i++;
@@ -37,19 +37,11 @@ char		*ft_itoa(int n)
 
 	nvalue = n;
 	nbrlen = ft_nbrlen(n);
-	tmp = NULL;
-	tmp = (char *) malloc ((nbrlen + 1) * sizeof (char));
-	if (tmp == NULL)
+	tmp = ft_strnew(nbrlen);
+	while (nbrlen--)
 	{
-		ft_putstr_fd("Out of memory\n", 2);
-		exit(1);
-	}
-	tmp[nbrlen] = '\0';
-	while (nbrlen != 0)
-	{
-		tmp[nbrlen - 1] = (n < 0) ? (n % 10) * -1 + 48 : (n % 10) + 48;
-		n = (n < 0) ? (n / -10) * -1 : n / 10;
-		nbrlen--;
+	 	tmp[nbrlen] = (n < 0) ? (n % 10) * -1 + 48 : (n % 10) + 48;
+	 	n = (n < 0) ? n / -10 :  n / 10;
 	}
 	if (nvalue < 0)
 		tmp[0] = '-';

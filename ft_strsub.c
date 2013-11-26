@@ -20,10 +20,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s == 0)
 		return (NULL);
 	i = 0;
-	sub = NULL;
-	sub = (char *) malloc(len * sizeof(char *));
-	if (sub == NULL)
-		return (NULL);
+	sub = ft_strnew(len);
 	while (len--)
 	{
 		sub[i] = *(s + start + i);
