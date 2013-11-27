@@ -14,15 +14,9 @@
 
 int     ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*src1;
-	char	*src2;
-
-	src1 = (char *) s1;
-	src2 = (char *) s2;
-	while (*src1 == *src2)
-	{
-		if ((*src1++ == '\0' && *src2++ == '\0') || n-- == 0)
-			return (0);
-	}
-	return ((int) ((*src1 - 1 < *src2 - 1) < 0 ) ? -1 : 1);
+	if (n > ft_strlen(s1))
+		return ((int) ft_memcmp(s1, s2, ft_strlen(s1)));
+	if (n > ft_strlen(s2))
+		return ((int) ft_memcmp(s1, s2, ft_strlen(s2)));
+	return ((int) ft_memcmp(s1, s2, n));
 }

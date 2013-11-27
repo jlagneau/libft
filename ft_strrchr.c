@@ -16,12 +16,12 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*src;
 
-	src = (char *) s + ft_strlen(s) + 1;
-	while (src != s)
+	src = (char *) s + ft_strlen(s);
+	while (*src != (char) c)
 	{
-		if (*src == (char) c)
-			return (src);
+		if (src == s)
+			return (NULL);
 		src--;
 	}
-	return (NULL);
+	return (src);
 }
