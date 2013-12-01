@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/12/01 18:59:59 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/12/01 21:15:40 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
@@ -34,10 +34,10 @@ SRC2 = ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c \
 	   ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c \
 	   ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 	   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-# Personnal sources
-SRC3 = ft_isspace.c ft_str_array_del.c
 # Bonus
-SRC4 = ft_lstnew.c
+SRC3 = ft_lstnew.c ft_lstdelone.c ft_lstdel.c
+# Personnal sources
+SRC4 = ft_isspace.c ft_str_array_del.c
 
 SRCS += $(SRC2) $(SRC3) $(SRC4)
 OBJS = $(SRCS:.c=.o)
