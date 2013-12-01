@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:22:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:41:24 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/01 15:57:48 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*tmp;
 	char	*ret;
 	int		len;
 
@@ -23,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ret = NULL;
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	ret = ft_strnew(len);
-	tmp = ft_strdup(s1);
-	ret = ft_strcat(tmp, s2);
-	return (tmp);
+	ret = ft_strcat(ret, s1);
+	ret = ft_strcat(ret, s2);
+	return (ret);
 }

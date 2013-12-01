@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/27 18:18:47 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/01 15:46:01 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,22 +66,6 @@ static int		ft_count_words(char const *s, char c)
 	return (i);
 }
 
-static char		*ft_strcdup(char const *s, char c)
-{
-	char	*ret;
-	char	*tmp;
-	size_t	len;
-
-	len = 0;
-	tmp = ft_strdup(s);
-	while (tmp[len] != '\0' && tmp[len] != c)
-		len++;
-	ret = ft_strnew(len);
-	ret = ft_memmove(ret, tmp, len);
-	ft_strdel(&tmp);
-	return (ret);
-}
-
 char			**ft_strsplit(char const *s, char c)
 {
 	char	*src_clean;
@@ -96,15 +80,13 @@ char			**ft_strsplit(char const *s, char c)
 	src_clean = ft_strctrim(s, c);
 	p = src_clean;
 	words = ft_count_words(src_clean, c);
-	ret = (char **) ft_memalloc(words + 1);
+	ret = (char **) ft_memalloc(sizeof (char *) * words + 1);
 	while (i < words)
 	{
-		ret[i] = ft_strcdup(src_clean, c);
-		if (i + 1 != words)
-		{
-			src_clean = src_clean + ft_strclen(src_clean, c);
-			src_clean = ft_strctrim(src_clean, c);
-		}
+		while (*src_clean && *src_clean == c)
+			src_clean++;
+		ret[i] = ft_strsub(src_clean, 0, ft_strclen(src_clean, c));
+		src_clean = src_clean + ft_strclen(src_clean, c);
 		i++;
 	}
 	ret[words] = NULL;
