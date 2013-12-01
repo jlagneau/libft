@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:32:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:33:00 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/01 14:07:43 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,18 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putstr_fd(ft_itoa(n), fd);
+	if (n < 0)
+		ft_putchar_fd('-', fd);
+	if (n < 0)
+	{
+		if (n < -9)
+			ft_putnbr(n / -10);
+		ft_putchar_fd(n % 10 * -1 + '0', fd);
+	}
+	if (n >= 0)
+	{
+		if (n > 9)
+			ft_putnbr(n / 10);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
 }
