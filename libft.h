@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 22:56:25 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -83,5 +83,5 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /* PERSONNAL FUNCTION */
 int		ft_isspace(int c);
-void	ft_str_array_del(char **s);
+void	ft_strarraydel(char **s);
 #endif /* LIBFT_H */
