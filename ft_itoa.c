@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:34:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 17:04:16 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 16:22:17 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_nbrlen(int n)
 {
-	int	i;
-	int nb;
+	int		i;
+	int		nb;
 
 	i = 0;
 	nb = n;

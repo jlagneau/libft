@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:39:02 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 16:32:07 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 16:21:23 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		if (*src1 != *src2)
 			return (*src1 - *src2);
 		if (!*src1)
-			break;
+			break ;
 		src1++;
 		src2++;
 	}
