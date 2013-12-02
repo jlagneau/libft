@@ -6,12 +6,12 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2013/12/02 18:45:35 by jlagneau         ###   ########.fr        #
+#    Updated: 2013/12/02 18:48:12 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 # Variables
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pedantic -ansi -I.
+CFLAGS = -O3 -Wall -Wextra -Werror -pedantic -ansi -I.
 
 AR = ar
 ARFLAGS = rcs
