@@ -6,11 +6,10 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 15:46:01 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 15:39:43 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 static char		*ft_strctrim(char const *s, char c)
