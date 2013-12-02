@@ -79,7 +79,7 @@ char			**ft_strsplit(char const *s, char c)
 	src_clean = ft_strctrim(s, c);
 	p = src_clean;
 	words = ft_count_words(src_clean, c);
-	ret = (char **)ft_memalloc(sizeof (char *) * words + 1);
+	ret = (char **)ft_memalloc(sizeof(char *) * words + 1);
 	while (i < words)
 	{
 		while (*src_clean && *src_clean == c)
