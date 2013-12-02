@@ -23,13 +23,13 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*tmp;
 	t_list	*p;
 
-	if (!(tmp = (t_list *)malloc(sizeof(*lst))))
+	if (!(tmp = (t_list *)ft_memalloc(sizeof(*lst))))
 		return (NULL);
 	p = tmp;
 	while (lst != NULL)
 	{
 		*tmp = *f(lst);
-		if (!(tmp->next = (t_list *)malloc(sizeof(*lst))))
+		if (!(tmp->next = (t_list *)ft_memalloc(sizeof(*lst))))
 		{
 			ft_lstdel(&p, ft_del);
 			return (NULL);
