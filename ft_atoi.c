@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:35:38 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 16:09:22 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 17:35:02 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				ft_atoi(const char *str)
 	int			i;
 	char		*s;
 
-	s = (char *) str;
+	s = (char *)str;
 	op = 1;
 	ret = 0;
 	i = 0;

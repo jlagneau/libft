@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 14:01:03 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 17:40:39 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return ((char *) ft_memalloc(size + 1));
+	return ((char *)ft_memalloc(size + 1));
 }

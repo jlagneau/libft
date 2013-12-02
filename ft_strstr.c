@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:39:35 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 16:51:03 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 17:41:59 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char	*ft_strstr(const char *s1, const char *s2)
 	int		len;
 
 	if (!*s1 && !*s2)
-		return ((char *) s1);
-	src = (char *) s1;
+		return ((char *)s1);
+	src = (char *)s1;
 	len = ft_strlen(s2);
 	while (*src)
 	{

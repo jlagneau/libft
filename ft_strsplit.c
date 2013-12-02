@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 15:41:39 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/02 17:41:46 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char			**ft_strsplit(char const *s, char c)
 	src_clean = ft_strctrim(s, c);
 	p = src_clean;
 	words = ft_count_words(src_clean, c);
-	ret = (char **) ft_memalloc(sizeof (char *) * words + 1);
+	ret = (char **)ft_memalloc(sizeof (char *) * words + 1);
 	while (i < words)
 	{
 		while (*src_clean && *src_clean == c)
