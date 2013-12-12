@@ -20,7 +20,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (s == 0)
 		return (NULL);
 	i = 0;
-	sub = ft_strnew(len);
+	if (!(sub = ft_strnew(len)))
+		return (NULL);
 	while (len--)
 	{
 		sub[i] = *(s + start + i);
