@@ -26,4 +26,3 @@ size_t	ft_lstlen(t_list *lst)
 	}
 	return (i);
 }
-
