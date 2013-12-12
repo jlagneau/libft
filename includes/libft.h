@@ -84,5 +84,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /* PERSONNAL FUNCTION */
 int		ft_isspace(int c);
 void	ft_strarraydel(char **s);
-void	*ft_realloc(void *content, size_t new_size);
+char	*ft_strrealloc(char *content, size_t new_size);
+size_t	ft_lstlen(t_list *list);
 #endif /* LIBFT_H */

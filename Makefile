@@ -41,7 +41,7 @@ SRCS_LST += ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c \
 SRCS_LST += ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
             ft_lstmap.c
 # Personal sources
-SRCS_LST += ft_isspace.c ft_strarraydel.c
+SRCS_LST += ft_isspace.c ft_strarraydel.c ft_strrealloc.c ft_lstlen.c
 
 OBJS      = $(addprefix $(SRCS_PATH), $(SRCS_LST:.c=.o))
 SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
