@@ -48,18 +48,18 @@ SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
 
 # Rules
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $@ $^
-	ranlib $@
+	@$(AR) $(ARFLAGS) $@ $^
+	@ranlib $@
 
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 clean:
-	$(RM) $(RMFLAGS) $(OBJS)
+	@$(RM) $(RMFLAGS) $(OBJS)
 
 fclean: clean
-	$(RM) $(RMFLAGS) $(NAME)
+	@$(RM) $(RMFLAGS) $(NAME)
 
 re: fclean all
