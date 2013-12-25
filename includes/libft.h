@@ -86,4 +86,6 @@ int		ft_isspace(int c);
 void	ft_strarraydel(char **s);
 char	*ft_strrealloc(char *content, size_t new_size);
 size_t	ft_lstlen(t_list *list);
+void	ft_lstaddend(t_list **alst, t_list *new);
+t_list	*ft_lstlast(t_list *alst);
 #endif /* LIBFT_H */

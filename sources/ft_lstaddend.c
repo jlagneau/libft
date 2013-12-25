@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strarraydel.c                                   :+:      :+:    :+:   */
+/*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 18:36:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:59 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/12/02 08:36:28 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/12/08 21:31:11 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strarraydel(char **s)
+void		ft_lstaddend(t_list **alst, t_list *new)
 {
-	size_t	i;
+	t_list	*tmp;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i] != NULL)
-	{
-		ft_strdel(&s[i]);
-		i++;
-	}
-	free(s);
-	s = NULL;
+	tmp = ft_lstlast(*alst);
+	tmp->next = new;
 }
