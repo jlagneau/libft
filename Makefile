@@ -14,7 +14,7 @@
 NAME      = libft.a
 $(info :: Static library $(NAME))
 
-ISGIT    := $(shell find . -name ".git")
+ISGIT    := $(shell find . -name ".git" -type d)
 ifneq (, $(strip $(ISGIT)))
 	VER   := $(shell git describe --tags `git rev-list --tags --max-count=1`)
 	GDATE := $(shell git show -s --format="%ci" HEAD)
@@ -34,7 +34,7 @@ AR        = ar
 ARFLAGS   = rcs
 
 RM        = rm
-RMFLAGS   = -rf
+RMFLAGS   = -f
 
 SRCS_LST := $(shell find sources -type f -exec basename {} \; | tr "\n" " ")
 OBJS      = $(addprefix $(OBJS_PATH), $(SRCS_LST:.c=.o))
@@ -58,7 +58,7 @@ $(NAME): $(OBJS)
 	@printf " [\033[32mDONE\033[0m]\n"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
-	@if [ ! -e $(OBJS_PATH) ]; then \
+	@if [ ! -d $(OBJS_PATH) ]; then \
 	printf "[\033[36mlibft.a\033[0m] Building library     "; \
 	mkdir -p $(OBJS_PATH); \
 	fi;
@@ -75,7 +75,9 @@ all: $(NAME)
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
 	@$(RM) $(RMFLAGS) $(OBJS)
-	@$(RM) $(RMFLAGS) $(OBJS_PATH)
+	@if [ -d $(OBJS_PATH) ]; then \
+	rmdir $(OBJS_PATH); \
+	fi;
 	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
