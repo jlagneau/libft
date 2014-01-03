@@ -53,8 +53,8 @@ endif
 $(NAME): $(OBJS)
 	@printf "[\033[32mDONE\033[0m]\n"
 	@printf "[\033[36mlibft.a\033[0m] Linking and indexing"
-	$(AR) $(ARFLAGS) $@ $^
-	ranlib $@
+	@$(AR) $(ARFLAGS) $@ $^
+	@ranlib $@
 	@printf " [\033[32mDONE\033[0m]\n"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
@@ -62,11 +62,11 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	printf "[\033[36mlibft.a\033[0m] Building library     "; \
 	mkdir -p $(OBJS_PATH); \
 	fi;
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 debug: CFLAGS += -g3
 debug: DEBUG = yes
-debug: $(NAME)
+debug: all
 
 redebug: fclean debug
 
@@ -74,17 +74,15 @@ all: $(NAME)
 
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
-	$(RM) $(RMFLAGS) $(OBJS)
-	$(RM) $(RMFLAGS) $(OBJS_PATH)
+	@$(RM) $(RMFLAGS) $(OBJS)
+	@$(RM) $(RMFLAGS) $(OBJS_PATH)
 	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
 	@printf "[\033[36mlibft.a\033[0m] Removing binary "
-	$(RM) $(RMFLAGS) $(NAME)
+	@$(RM) $(RMFLAGS) $(NAME)
 	@printf "     [\033[32mDONE\033[0m]\n"
 
 re: fclean all
 
 .PHONY: all clean fclean re
-
-.SILENT:
