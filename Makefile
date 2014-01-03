@@ -14,19 +14,13 @@
 NAME      = libft.a
 
 ISGIT    := $(shell find . -name ".git")
-# Uncomment line below for debug.
-#$(warning $(ISGIT))
-
 ifneq (, $(strip $(ISGIT)))
 	VERSION  := $(shell git describe --tags `git rev-list --tags --max-count=1`)
+	GITDATE  := $(shell git show -s --format="%ci" HEAD)
 endif
-# Uncomment line below for debug.
-#$(warning $(VERSION))
-
 DIR_PATH := $(shell pwd)
-# Uncomment line below for debug.
-#$(warning $(DIR_PATH))
 
+OBJS_PATH = objects/
 SRCS_PATH = sources/
 HEAD_PATH = includes/
 
@@ -37,7 +31,7 @@ AR        = ar
 ARFLAGS   = rcs
 
 RM        = rm
-RMFLAGS   = -f
+RMFLAGS   = -rf
 
 # Minimal sources
 SRCS_LST  = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
@@ -62,13 +56,14 @@ SRCS_LST += ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 SRCS_LST += ft_isspace.c ft_stradel.c ft_stralen.c ft_strrealloc.c \
             ft_lstlen.c ft_lstlast.c ft_lstaddend.c get_next_line.c
 
-OBJS      = $(addprefix $(SRCS_PATH), $(SRCS_LST:.c=.o))
+OBJS      = $(addprefix $(OBJS_PATH), $(SRCS_LST:.c=.o))
 SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
 
 # Print informations about the library
-$(info # Start building static library $(NAME))
-ifneq (, $(strip $(VERSION)))
+$(info # Static library $(NAME))
+ifneq (, $(strip $(ISGIT)))
 $(info # Version : $(VERSION))
+$(info # Last modifications : $(GITDATE))
 else
 $(info # $(DIR_PATH) is not a proper git repository)
 endif
@@ -81,8 +76,11 @@ $(NAME): $(OBJS)
 	@ranlib $@
 	@printf " [\033[32mDONE\033[0m]\n"
 
-$(SRCS_PATH)%.o: $(SRCS_PATH)%.c
-	@if [ ! -e $(SRCS_PATH)ft_memset.o ]; then \
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.c
+	@if [ ! -e $(OBJS_PATH) ]; then \
+	mkdir $(OBJS_PATH); \
+	fi;
+	@if [ ! -e $(OBJS_PATH)ft_memset.o ]; then \
 	printf "[\033[36mlibft.a\033[0m] Building library     "; \
 	fi;
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -92,6 +90,7 @@ all: $(NAME)
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
 	@$(RM) $(RMFLAGS) $(OBJS)
+	@$(RM) $(RMFLAGS) $(OBJS_PATH)
 	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
