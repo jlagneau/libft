@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strarraydel.c                                   :+:      :+:    :+:   */
+/*   ft_stradel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-void	ft_strarraydel(char **s)
+void	ft_stradel(char ***a)
 {
 	size_t	i;
 
-	if (!s)
+	if (!*a)
 		return ;
 	i = 0;
-	while (s[i] != NULL)
+	while (*a[i] != NULL)
 	{
-		ft_strdel(&s[i]);
+		ft_strdel(&(*a[i]));
 		i++;
 	}
-	free(s);
-	s = NULL;
+	free(*a);
+	*a = NULL;
 }

@@ -45,8 +45,8 @@ SRCS_LST += ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
             ft_lstmap.c
 
 # Personal sources
-SRCS_LST += ft_isspace.c ft_strarraydel.c ft_strrealloc.c ft_lstlen.c \
-            ft_lstlast.c ft_lstaddend.c get_next_line.c
+SRCS_LST += ft_isspace.c ft_stradel.c ft_stralen.c ft_strrealloc.c \
+            ft_lstlen.c ft_lstlast.c ft_lstaddend.c get_next_line.c
 
 OBJS      = $(addprefix $(SRCS_PATH), $(SRCS_LST:.c=.o))
 SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
@@ -54,7 +54,7 @@ SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
 $(info \
 ##############################################\
  LIBFT \
-##############################################)
+###############################################)
 
 # Rules
 $(NAME): $(OBJS)
@@ -62,8 +62,8 @@ $(NAME): $(OBJS)
 	@printf "[\033[36mlibft.a\033[0m] Linking and indexing "
 	@$(AR) $(ARFLAGS) $@ $^
 	@ranlib $@
-	@printf "............................................................. "
-	@printf "[\033[32mDONE\033[0m]\n"
+	@printf ".............................................................."
+	@printf " [\033[32mDONE\033[0m]\n"
 
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
 	@if [ ! -e $(SRCS_PATH)ft_memset.o ]; then \
@@ -77,14 +77,14 @@ all: $(NAME)
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
 	@$(RM) $(RMFLAGS) $(OBJS)
-	@printf "................................................................. "
-	@printf "[\033[32mDONE\033[0m]\n"
+	@printf ".................................................................."
+	@printf " [\033[32mDONE\033[0m]\n"
 
 fclean: clean
 	@printf "[\033[36mlibft.a\033[0m] Removing binary "
 	@$(RM) $(RMFLAGS) $(NAME)
-	@printf ".................................................................. "
-	@printf "[\033[32mDONE\033[0m]\n"
+	@printf "..................................................................."
+	@printf " [\033[32mDONE\033[0m]\n"
 
 re: fclean all
 

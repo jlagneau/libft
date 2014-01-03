@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,6 +17,8 @@ t_list		*ft_lstlast(t_list *alst)
 	t_list	*tmp;
 
 	tmp = alst;
+	if (!tmp)
+		return (tmp);
 	while (tmp->next)
 		tmp = tmp->next;
 	return (tmp);

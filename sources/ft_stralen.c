@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlen.c                                        :+:      :+:    :+:   */
+/*   ft_stralen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,19 +12,12 @@
 
 #include "libft.h"
 
-size_t	ft_lstlen(t_list *lst)
+size_t		ft_stralen(char **s)
 {
 	size_t	i;
-	t_list	*tmp;
 
 	i = 0;
-	tmp = lst;
-	if (!lst)
-		return (i);
-	while (tmp)
-	{
-		tmp = tmp->next;
+	while (s[i])
 		i++;
-	}
 	return (i);
 }
