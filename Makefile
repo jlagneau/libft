@@ -12,20 +12,23 @@
 
 # Variables
 NAME      = libft.a
+$(info :: Static library $(NAME))
 
 ISGIT    := $(shell find . -name ".git")
 ifneq (, $(strip $(ISGIT)))
-	VERSION  := $(shell git describe --tags `git rev-list --tags --max-count=1`)
-	GITDATE  := $(shell git show -s --format="%ci" HEAD)
+	VER   := $(shell git describe --tags `git rev-list --tags --max-count=1`)
+	GDATE := $(shell git show -s --format="%ci" HEAD)
 endif
 DIR_PATH := $(shell pwd)
+
+DEBUG     = no
 
 OBJS_PATH = objects/
 SRCS_PATH = sources/
 HEAD_PATH = includes/
 
 CC        = gcc
-CFLAGS    = -O3 -Wall -Wextra -Werror -pedantic -ansi -I$(HEAD_PATH)
+CFLAGS    = -Wall -Wextra -Werror -pedantic -ansi -I$(HEAD_PATH)
 
 AR        = ar
 ARFLAGS   = rcs
@@ -33,71 +36,55 @@ ARFLAGS   = rcs
 RM        = rm
 RMFLAGS   = -rf
 
-# Minimal sources
-SRCS_LST  = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-            ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
-            ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_strchr.c \
-            ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c ft_strncmp.c \
-            ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
-            ft_isprint.c ft_toupper.c ft_tolower.c
-
-# Custom sources
-SRCS_LST += ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c \
-            ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c \
-            ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c \
-            ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
-            ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-# Bonus
-SRCS_LST += ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-            ft_lstmap.c
-
-# Personal sources
-SRCS_LST += ft_isspace.c ft_stradel.c ft_stralen.c ft_strrealloc.c \
-            ft_lstlen.c ft_lstlast.c ft_lstaddend.c get_next_line.c
-
+SRCS_LST := $(shell find sources -type f -exec basename {} \; | tr "\n" " ")
 OBJS      = $(addprefix $(OBJS_PATH), $(SRCS_LST:.c=.o))
 SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
 
 # Print informations about the library
-$(info # Static library $(NAME))
 ifneq (, $(strip $(ISGIT)))
-$(info # Version : $(VERSION))
-$(info # Last modifications : $(GITDATE))
-else
-$(info # $(DIR_PATH) is not a proper git repository)
+    $(info :: Version : $(VER))
+    $(info :: Last modifications : $(GDATE))
 endif
 
 # Rules
+ifneq (yes, $(DEBUG))
+    $(NAME): CFLAGS += -O3
+endif
 $(NAME): $(OBJS)
 	@printf "[\033[32mDONE\033[0m]\n"
 	@printf "[\033[36mlibft.a\033[0m] Linking and indexing"
-	@$(AR) $(ARFLAGS) $@ $^
-	@ranlib $@
+	$(AR) $(ARFLAGS) $@ $^
+	ranlib $@
 	@printf " [\033[32mDONE\033[0m]\n"
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	@if [ ! -e $(OBJS_PATH) ]; then \
-	mkdir $(OBJS_PATH); \
-	fi;
-	@if [ ! -e $(OBJS_PATH)ft_memset.o ]; then \
 	printf "[\033[36mlibft.a\033[0m] Building library     "; \
+	mkdir -p $(OBJS_PATH); \
 	fi;
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
+debug: CFLAGS += -g3
+debug: DEBUG = yes
+debug: $(NAME)
+
+redebug: fclean debug
 
 all: $(NAME)
 
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
-	@$(RM) $(RMFLAGS) $(OBJS)
-	@$(RM) $(RMFLAGS) $(OBJS_PATH)
+	$(RM) $(RMFLAGS) $(OBJS)
+	$(RM) $(RMFLAGS) $(OBJS_PATH)
 	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
 	@printf "[\033[36mlibft.a\033[0m] Removing binary "
-	@$(RM) $(RMFLAGS) $(NAME)
+	$(RM) $(RMFLAGS) $(NAME)
 	@printf "     [\033[32mDONE\033[0m]\n"
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+.SILENT:
