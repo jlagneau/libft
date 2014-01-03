@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static void		ft_del(void *content, size_t size)
-{
-	ft_memdel((void **)&content);
-	(void)size;
-}
+#include <libft.h>
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
@@ -30,10 +24,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		*tmp = *f(lst);
 		if (!(tmp->next = (t_list *)ft_memalloc(sizeof(*lst))))
-		{
-			ft_lstdel(&p, ft_del);
 			return (NULL);
-		}
 		tmp = tmp->next;
 		lst = lst->next;
 	}

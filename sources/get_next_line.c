@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
 {
