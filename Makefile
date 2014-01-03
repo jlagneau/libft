@@ -13,6 +13,20 @@
 # Variables
 NAME      = libft.a
 
+ISGIT    := $(shell find . -name ".git")
+# Uncomment line below for debug.
+#$(warning $(ISGIT))
+
+ifneq (, $(strip $(ISGIT)))
+	VERSION  := $(shell git describe --tags `git rev-list --tags --max-count=1`)
+endif
+# Uncomment line below for debug.
+#$(warning $(VERSION))
+
+DIR_PATH := $(shell pwd)
+# Uncomment line below for debug.
+#$(warning $(DIR_PATH))
+
 SRCS_PATH = sources/
 HEAD_PATH = includes/
 
@@ -51,40 +65,39 @@ SRCS_LST += ft_isspace.c ft_stradel.c ft_stralen.c ft_strrealloc.c \
 OBJS      = $(addprefix $(SRCS_PATH), $(SRCS_LST:.c=.o))
 SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
 
-$(info \
-##############################################\
- LIBFT \
-###############################################)
+# Print informations about the library
+$(info # Start building static library $(NAME))
+ifneq (, $(strip $(VERSION)))
+$(info # Version : $(VERSION))
+else
+$(info # $(DIR_PATH) is not a proper git repository)
+endif
 
 # Rules
 $(NAME): $(OBJS)
-	@printf " [\033[32mDONE\033[0m]\n"
-	@printf "[\033[36mlibft.a\033[0m] Linking and indexing "
+	@printf "[\033[32mDONE\033[0m]\n"
+	@printf "[\033[36mlibft.a\033[0m] Linking and indexing"
 	@$(AR) $(ARFLAGS) $@ $^
 	@ranlib $@
-	@printf ".............................................................."
 	@printf " [\033[32mDONE\033[0m]\n"
 
 $(SRCS_PATH)%.o: $(SRCS_PATH)%.c
 	@if [ ! -e $(SRCS_PATH)ft_memset.o ]; then \
-	printf "[\033[36mlibft.a\033[0m] Building library "; \
+	printf "[\033[36mlibft.a\033[0m] Building library     "; \
 	fi;
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "."
 
 all: $(NAME)
 
 clean:
 	@printf "[\033[36mlibft.a\033[0m] Removing objects "
 	@$(RM) $(RMFLAGS) $(OBJS)
-	@printf ".................................................................."
-	@printf " [\033[32mDONE\033[0m]\n"
+	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
 	@printf "[\033[36mlibft.a\033[0m] Removing binary "
 	@$(RM) $(RMFLAGS) $(NAME)
-	@printf "..................................................................."
-	@printf " [\033[32mDONE\033[0m]\n"
+	@printf "     [\033[32mDONE\033[0m]\n"
 
 re: fclean all
 
