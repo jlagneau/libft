@@ -13,13 +13,24 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include <errno.h>
+# define BUFF_SIZE 4096
+
+typedef struct		s_read
+{
+	int				size;
+	int				index;
+	int				fd;
+	char			*read;
+	struct s_read	*next;
+}					t_read;
+
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
 /* PART 1 */
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
@@ -88,4 +99,5 @@ char	*ft_strrealloc(char *content, size_t new_size);
 size_t	ft_lstlen(t_list *list);
 void	ft_lstaddend(t_list **alst, t_list *new);
 t_list	*ft_lstlast(t_list *alst);
+int		get_next_line(int fd, char **line);
 #endif /* LIBFT_H */
