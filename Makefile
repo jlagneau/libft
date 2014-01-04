@@ -111,4 +111,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: debug redebug install uninstall all clean fclean re
