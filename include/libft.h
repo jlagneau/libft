@@ -16,6 +16,6 @@
 # include <ft_mem.h>
 # include <ft_gnl.h>
 # include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
+# include <ft_str.h>
+# include <ft_io.h>
 #endif

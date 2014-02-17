@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_str.h>
 
 t_size	ft_strlcat(char *dst, const char *src, t_size size)
 {

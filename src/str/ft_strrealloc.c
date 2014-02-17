@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_str.h>
 
 char			*ft_strrealloc(char *s, t_size new_size)
 {

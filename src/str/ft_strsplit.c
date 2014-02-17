@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_mem.h>
-#include <ft_string.h>
+#include <ft_str.h>
 
 static char		*ft_strctrim(char const *s, char c)
 {

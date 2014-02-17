@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string.h                                        :+:      :+:    :+:   */
+/*   ft_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_STRING_H
-# define	FT_STRING_H
-# include <ft_def.h>
+#ifndef		FT_STR_H
+# define	FT_STR_H
+# include	<ft_def.h>
 
 t_size	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);

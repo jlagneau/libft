@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_str.h>
 #include <stdlib.h>
 
 void	ft_stradel(char ***a)

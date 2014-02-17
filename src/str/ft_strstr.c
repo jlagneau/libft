@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_mem.h>
-#include <ft_string.h>
+#include <ft_str.h>
 
 char	*ft_strstr(const char *s1, const char *s2)
 {

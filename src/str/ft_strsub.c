@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_string.h>
+#include <ft_str.h>
 
 char	*ft_strsub(char const *s, unsigned int start, t_size len)
 {

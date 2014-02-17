@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ft_mem.h>
-#include <ft_string.h>
+#include <ft_str.h>
 
 void	ft_strclr(char *s)
 {
