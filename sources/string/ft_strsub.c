@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 09:08:36 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/11/25 15:39:03 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_string.h>
+
+char	*ft_strsub(char const *s, unsigned int start, t_size len)
+{
+	char	*sub;
+	t_size	i;
+
+	if (s == 0)
+		return (0);
+	if (!(sub = ft_strnew(len)))
+		return (0);
+	i = 0;
+	while (len--)
+	{
+		sub[i] = *(s + start + i);
+		i++;
+	}
+	return (sub);
+}

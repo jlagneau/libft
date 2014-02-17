@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 08:38:24 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/11/26 13:54:29 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_mem.h>
+#include <ft_string.h>
+
+char	*ft_strdup(const char *s)
+{
+	char	*dest;
+	t_size	len;
+
+	dest = 0;
+	len = ft_strlen(s);
+	dest = ft_strnew(len);
+	if (dest == 0)
+		return (0);
+	ft_memcpy(dest, s, len + 1);
+	return (dest);
+}

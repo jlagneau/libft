@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 08:30:53 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/12/01 16:23:00 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_mem.h>
+
+char	*ft_strncpy(char *s1, const char *s2, t_size n)
+{
+	t_size	i;
+
+	if (!s1 && !s2)
+		return (0);
+	i = 0;
+	ft_bzero(s1, n);
+	while (s2[i] && i < n)
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	return (s1);
+}

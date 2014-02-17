@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stradel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/12/01 18:36:55 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/12/02 19:20:59 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_string.h>
+#include <stdlib.h>
+
+void	ft_stradel(char ***a)
+{
+	t_size	i;
+
+	if (!*a)
+		return ;
+	i = 0;
+	while (*a[i] != 0)
+	{
+		ft_strdel(&(*a[i]));
+		i++;
+	}
+	free(*a);
+	*a = 0;
+}

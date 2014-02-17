@@ -12,7 +12,7 @@
 
 # Variables
 NAME      = libft.a
-HEADER    = libft.h
+HEADER    = 
 $(info :: Static library $(NAME))
 
 ISGIT    := $(shell find . -name ".git" -type d)
@@ -27,12 +27,12 @@ INC_PATH  = /usr/include
 
 DEBUG     = no
 
-OBJS_PATH = objects/
+OBJS_PATH = bin/objects/
 SRCS_PATH = sources/
 HEAD_PATH = includes/
 
 CC        = gcc
-CFLAGS    = -Wall -Wextra -Werror -pedantic -ansi -I$(HEAD_PATH)
+CFLAGS    = -I$(HEAD_PATH) -Wall -Wextra -Werror -pedantic -ansi
 
 AR        = ar
 ARFLAGS   = rcs
@@ -40,9 +40,8 @@ ARFLAGS   = rcs
 RM        = rm
 RMFLAGS   = -f
 
-SRCS_LST := $(shell find sources -type f -exec basename {} \; | tr "\n" " ")
-OBJS      = $(addprefix $(OBJS_PATH), $(SRCS_LST:.c=.o))
-SRCS      = $(addprefix $(SRCS_PATH), $(SRCS_LST))
+SRCS     := $(shell find sources -type f | tr "\n" " ")
+OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
 
 # Print informations about the library
 ifneq (, $(strip $(ISGIT)))
@@ -61,7 +60,7 @@ $(NAME): $(OBJS)
 	@ranlib $@
 	@printf " [\033[32mDONE\033[0m]\n"
 
-$(OBJS_PATH)%.o: $(SRCS_PATH)%.c
+$(OBJS_PATH)%.o: $(SRCS_PATH)*/%.c
 	@if [ ! -d $(OBJS_PATH) ]; then \
 	printf "[\033[36m%s\033[0m] Building library     " $(NAME); \
 	mkdir -p $(OBJS_PATH); \

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 09:22:17 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/12/01 15:57:48 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_string.h>
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*ret;
+	int		len;
+
+	if (s1 == 0 || s2 == 0)
+		return (0);
+	ret = 0;
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ret = ft_strnew(len);
+	ret = ft_strcat(ret, s1);
+	ret = ft_strcat(ret, s2);
+	return (ret);
+}

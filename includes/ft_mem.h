@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_mem.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef		FT_MEM_H
+# define	FT_MEM_H
 # include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
+
+void	*ft_memalloc(t_size size);
+void	ft_memdel(void **ap);
+void	*ft_memset(void *s, int c, t_size n);
+void	ft_bzero(void *s, t_size n);
+void	*ft_memcpy(void *dest, const void *src, t_size n);
+void	*ft_memccpy(void *dest, const void *src, int c, t_size n);
+void	*ft_memmove(void *dest, const void *src, t_size n);
+void	*ft_memchr(const void *s, int c, t_size n);
+int		ft_memcmp(const void *s1, const void *s2, t_size n);
+
 #endif

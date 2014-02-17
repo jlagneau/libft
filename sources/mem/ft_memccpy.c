@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Created: 2013/11/21 08:33:58 by jlagneau          #+#    #+#             */
+/*   Updated: 2013/12/02 17:37:26 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_string.h>
-# include <ft_stdio.h>
-#endif
+#include <ft_def.h>
+
+void	*ft_memccpy(void *s1, const void *s2, int c, t_size n)
+{
+	unsigned char			*d;
+	const unsigned char		*s;
+
+	d = s1;
+	s = s2;
+	while (n--)
+	{
+		if (*s == (unsigned char)c)
+		{
+			*d++ = *s++;
+			return (d);
+		}
+		*d++ = *s++;
+	}
+	return (0);
+}
