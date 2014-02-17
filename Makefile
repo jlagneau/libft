@@ -12,7 +12,7 @@
 
 # Variables
 NAME      = libft.a
-HEADER    = 
+
 $(info :: Static library $(NAME))
 
 ISGIT    := $(shell find . -name ".git" -type d)
@@ -27,9 +27,9 @@ INC_PATH  = /usr/include
 
 DEBUG     = no
 
-OBJS_PATH = bin/objects/
-SRCS_PATH = sources/
-HEAD_PATH = includes/
+OBJS_PATH = lib/obj/
+SRCS_PATH = src/
+HEAD_PATH = include/
 
 CC        = gcc
 CFLAGS    = -I$(HEAD_PATH) -Wall -Wextra -Werror -pedantic -ansi
@@ -40,7 +40,7 @@ ARFLAGS   = rcs
 RM        = rm
 RMFLAGS   = -f
 
-SRCS     := $(shell find sources -type f | tr "\n" " ")
+SRCS     := $(shell find src -type f | tr "\n" " ")
 OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
 
 # Print informations about the library
