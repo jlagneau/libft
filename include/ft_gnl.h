@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Updated: 2014/05/13 13:08:17 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ typedef struct		s_read
 	struct s_read	*next;
 }					t_read;
 
-int		get_next_line(int fd, char **line);
+int					get_next_line(int fd, char **line);
 
 #endif
