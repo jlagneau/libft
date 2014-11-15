@@ -3,6 +3,8 @@
 Project of school 42 which aim to recode a part of the standard library "libc"
 functions, with custom functions.
 
+coucou
+
 ## Compile
 
 ### Normal
