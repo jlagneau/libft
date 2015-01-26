@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_MEM_H
-# define	FT_MEM_H
+#ifndef FT_MEM_H
+# define FT_MEM_H
 # include <ft_def.h>
 
 void	*ft_memalloc(t_size size);

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_STR_H
-# define	FT_STR_H
-# include	<ft_def.h>
+#ifndef FT_STR_H
+# define FT_STR_H
+# include <ft_def.h>
 
 t_size	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);

@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_GNL_H
-# define	FT_GNL_H
+#ifndef FT_GNL_H
+# define FT_GNL_H
 
-# define	BUFF_SIZE 	4096
+# define BUFF_SIZE 	4096
 
 typedef struct		s_read
 {

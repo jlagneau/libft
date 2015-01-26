@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_IO_H
-# define	FT_IO_H
+#ifndef FT_IO_H
+# define FT_IO_H
 
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);

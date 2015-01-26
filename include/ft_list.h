@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef		FT_LIST_H
-# define	FT_LIST_H
+#ifndef FT_LIST_H
+# define FT_LIST_H
 # include <ft_def.h>
 
 typedef struct		s_list
