@@ -12,19 +12,20 @@
 
 #include <ft_str.h>
 
-char			*ft_strrealloc(char *s, t_size new_size)
+char			*ft_strrealloc(char **s, t_size new_size)
 {
 	char		*tmp;
 
-	if (!s)
+	if (!*s)
 	{
-		if (!(s = ft_strnew(new_size)))
+		if (!(*s = ft_strnew(new_size)))
 			return (0);
-		return (s);
+		return (*s);
 	}
 	if (!(tmp = ft_strnew(new_size)))
 		return (0);
-	tmp = (char *)ft_strncpy(tmp, s, ft_strlen(s));
-	ft_strdel(&s);
-	return (tmp);
+	tmp = (char *)ft_strncpy(tmp, *s, ft_strlen(*s));
+	ft_strdel(s);
+	*s = tmp;
+	return (*s);
 }

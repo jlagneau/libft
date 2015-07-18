@@ -130,26 +130,6 @@ redebug: DEBUG = yes
 redebug: NAME = $(DEB_NAME)
 redebug: fclean debug
 
-install:
-	@if [ -e $(LIB_PATH)/$(NAME) ]; then \
-	printf "[\033[36m%s\033[0m] Is already installed\n" $(NAME); \
-	else \
-	cp $(NAME) $(LIB_PATH); \
-	cp $(HEAD_PATH)/$(HEADER) $(INC_PATH); \
-	chown root:root $(LIB_PATH)/$(NAME); \
-	chown root:root $(INC_PATH)/$(HEADER); \
-	printf "[\033[36m%s\033[0m] Installed correctly\n" $(NAME); \
-	fi;
-
-uninstall:
-	@if [ -e $(LIB_PATH)/$(NAME) ]; then \
-	$(RM) $(RMFLAGS) $(LIB_PATH)/$(NAME); \
-	$(RM) $(RMFLAGS) $(INC_PATH)/$(HEADER); \
-	printf "[\033[36m%s\033[0m] Uninstalled correctly\n" $(NAME); \
-	else \
-	printf "[\033[36m%s\033[0m] Is not installed\n" $(NAME); \
-	fi;
-
 all: $(NAME)
 
 clean:
