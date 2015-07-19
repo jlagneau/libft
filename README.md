@@ -3,8 +3,6 @@
 Project of school 42 which aim to recode a part of the standard library "libc"
 functions, with custom functions.
 
-coucou
-
 ## Compile
 
 ### Normal
@@ -30,14 +28,6 @@ to erase objects and rebuid everything with debug flags.
 ## (TODO) Test
 
 	make test && ./test/unit_test
-
-## Installation
-
-    make && sudo make install
-
-## Uninstallation
-
-    sudo make uninstall
 
 ## License
 
