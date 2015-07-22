@@ -26,8 +26,6 @@ DIR_PATH := $(shell pwd)
 LIB_PATH  = /usr/lib
 INC_PATH  = /usr/include
 
-DEBUG     = no
-
 OBJS_PATH = bin/
 SRCS_PATH = src/
 HEAD_PATH = include/
@@ -73,10 +71,7 @@ ifneq (, $(strip $(ISGIT)))
 endif
 
 # Rules
-ifneq (yes, $(DEBUG))
-    $(NAME): CFLAGS += -O3
-endif
-$(NAME):
+$(NAME): CFLAGS += -O3
 $(NAME): $(OBJS)
 	@printf "[\033[32mDONE\033[0m]\n"
 	@printf "[\033[36m%s\033[0m] Linking and indexing" $(NAME)
@@ -99,27 +94,20 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 debug: CFLAGS += -g3
-debug: DEBUG = yes
-debug: NAME = $(DEB_NAME)
 debug: clean $(DEB_NAME)
 
-redebug: CFLAGS += -g3
-redebug: DEBUG = yes
-redebug: NAME = $(DEB_NAME)
 redebug: fclean debug
 
 all: $(NAME)
 
 clean:
 	@printf "[\033[36m%s\033[0m] Removing objects " $(NAME)
-	@$(RM) $(RMFLAGS) $(OBJS)
-	@$(RM) $(RMFLAGS) $(OBJS_PATH)
+	@$(RM) $(RMFLAGS) $(OBJS) $(OBJS_PATH)
 	@printf "    [\033[32mDONE\033[0m]\n"
 
 fclean: clean
 	@printf "[\033[36m%s\033[0m] Removing binary " $(NAME)
-	@$(RM) $(RMFLAGS) $(NAME)
-	@$(RM) $(RMFLAGS) $(DEB_NAME)
+	@$(RM) $(RMFLAGS) $(NAME) $(DEB_NAME)
 	@printf "     [\033[32mDONE\033[0m]\n"
 
 re: fclean all

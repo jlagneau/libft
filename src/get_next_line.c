@@ -6,132 +6,61 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 08:36:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/08 21:31:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2013/12/08 21:27:05 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_gnl.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <libft.h>
 
-static t_read		*ft_freeread(t_read *red, t_read *prev, t_read **start)
+static int			ft_set_line(char *buf, char **save, char **line)
 {
-	if (!prev)
-		*start = red->next;
-	else
-		prev->next = red->next;
-	free(red->read);
-	free(red);
-	if (!prev)
-		return (*start);
-	else
-		return (prev->next);
+	char*			pos;
+	char*			tmp;
+
+	if (!(*save = ft_strrealloc(save, ft_strlen(*save) + ft_strlen(buf))))
+		return (-1);
+	*save = ft_strcat(*save, buf);
+	if ((pos = ft_strchr(*save, '\n')))
+	{
+		if (!(*line = ft_strrealloc(line, pos - *save)))
+			return (-1);
+		*line = ft_strncpy(*line, *save, pos - *save);
+		if (!(tmp = ft_strsub(*save, pos + 1 - *save, ft_strlen(*save))))
+			return (-1);
+		ft_strdel(save);
+		if (*tmp)
+			*save = tmp;
+		return (1);
+	}
+	return (0);
 }
 
-static t_read		*ft_newread(int fd)
+int					get_next_line(int const fd, char **line)
 {
-	t_read			*red;
-	void			*tmp;
 	int				ret;
+	int				stream;
+	char			buf[BUFF_SIZE + 1];
+	static char		*save = NULL;
 
-	if (!(red = (t_read*)malloc(sizeof(t_read))))
-		return (0);
-	if (!(tmp = malloc(sizeof(char) * BUFF_SIZE)))
+	ft_bzero(buf, BUFF_SIZE + 1);
+	while ((stream = read(fd, buf, BUFF_SIZE)) > 0 || save)
 	{
-		free(red);
-		return (0);
-	}
-	if ((ret = read(fd, tmp, BUFF_SIZE)) < 0)
-	{
-		free(red);
-		free(tmp);
-		return (0);
-	}
-	red->read = (char*)tmp;
-	red->fd = fd;
-	red->size = ret;
-	red->next = 0;
-	red->index = 0;
-	return (red);
-}
-
-static int			ft_print(int n, t_read **tab, t_read **s, char **l)
-{
-	char			*tmpstr;
-	int				index;
-
-	if (!tab[0])
-		return (-1);
-	index = (tab[0])->index;
-	if (n == -1 || !(tmpstr = (char*)malloc(sizeof(char) * (n + 1))))
-		return (-1);
-	*l = tmpstr;
-	while (n--)
-	{
-		*tmpstr++ = (tab[0])->read[index++];
-		if (index == (tab[0])->size)
+		if (stream == -1)
+			return (-1);
+		if (stream == 0)
 		{
-			tab[0] = ft_freeread(tab[0], tab[1], s);
-			index = 0;
-		}
-	}
-	*tmpstr = 0;
-	if (!tab[0] || (index == tab[0]->size && tab[0]->size < BUFF_SIZE))
-		return (0);
-	tab[0]->index = index + 1;
-	if (tab[0]->index == tab[0]->size)
-		tab[0] = ft_freeread(tab[0], tab[1], s);
-	return (1);
-}
-
-static int			ft_findendl(int fd, t_read *red)
-{
-	int				index;
-	int				size;
-	t_read			*tmplst;
-
-	size = 0;
-	index = red->index;
-	while (red->read[index] != '\n' && index < red->size)
-	{
-		index++;
-		size++;
-		if (index == red->size && red->size == BUFF_SIZE)
-		{
-			if (!(tmplst = ft_newread(fd)))
+			if (!(*line = ft_strrealloc(line, ft_strlen(save))))
 				return (-1);
-			tmplst->next = red->next;
-			red->next = tmplst;
-			red = tmplst;
-			index = 0;
+			*line = ft_strcpy(*line, save);
+			ft_strdel(&save);
+			return (0);
 		}
+		ret = ft_set_line(buf, &save, line);
+		if (ret == 1)
+			return (1);
+		else if (ret == -1)
+			return (-1);
 	}
-	return (size);
-}
-
-int					get_next_line(int fd, char **line)
-{
-	static t_read	*start = 0;
-	t_read			*red;
-	t_read			*prevtmp;
-	t_read			*tab[2];
-
-	if (fd < 0)
-		return (-1);
-	prevtmp = 0;
-	if (!start)
-		start = ft_newread(fd);
-	red = start;
-	while (red->fd != fd)
-	{
-		if (!(red->next))
-			red->next = ft_newread(fd);
-		prevtmp = red;
-		red = red->next;
-	}
-	if (!red || !start)
-		return (-1);
-	tab[0] = red;
-	tab[1] = prevtmp;
-	return (ft_print(ft_findendl(fd, red), tab, &start, line));
+	return (0);
 }
