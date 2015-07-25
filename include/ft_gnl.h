@@ -12,7 +12,17 @@
 
 #ifndef FT_GNL_H
 # define FT_GNL_H
+
 # define BUFF_SIZE 	4096
+
+typedef struct		s_read
+{
+	int				size;
+	int				index;
+	int				fd;
+	char			*read;
+	struct s_read	*next;
+}					t_read;
 
 int					get_next_line(int fd, char **line);
 

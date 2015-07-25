@@ -30,7 +30,7 @@ OBJS_PATH = bin/
 SRCS_PATH = src/
 HEAD_PATH = include/
 
-CC        = gcc
+CC        = clang
 CFLAGS    = -I$(HEAD_PATH) -Wall -Wextra -Werror -pedantic -ansi
 
 AR        = ar
