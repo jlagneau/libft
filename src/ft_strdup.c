@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_str.h>
 
@@ -20,9 +21,8 @@ char	*ft_strdup(const char *s)
 
 	dest = 0;
 	len = ft_strlen(s);
-	dest = ft_strnew(len);
-	if (dest == 0)
-		return (0);
+	if (!(dest = ft_strnew(len)))
+		return (NULL);
 	ft_memcpy(dest, s, len + 1);
 	return (dest);
 }

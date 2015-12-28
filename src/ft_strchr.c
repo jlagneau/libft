@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include <ft_def.h>
+
+char		*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (0);
-	while (*s != (char)c)
+	while (*s != (const char)c)
 	{
-		if (*s++ == '\0')
-			return (0);
+		if (!*s++)
+			return (NULL);
 	}
-	return ((char *)s);
+	return ((char*)s);
 }

@@ -17,8 +17,6 @@ void	ft_stradel(char ***a)
 {
 	t_size	i;
 
-	if (!*a)
-		return ;
 	i = 0;
 	while (*a[i] != 0)
 	{
@@ -26,5 +24,5 @@ void	ft_stradel(char ***a)
 		i++;
 	}
 	free(*a);
-	*a = 0;
+	*a = NULL;
 }

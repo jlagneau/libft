@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_str.h>
 
 char	*ft_strsub(char const *s, unsigned int start, t_size len)
@@ -17,12 +18,10 @@ char	*ft_strsub(char const *s, unsigned int start, t_size len)
 	char	*sub;
 	t_size	i;
 
-	if (s == 0)
-		return (0);
 	if (!(sub = ft_strnew(len)))
-		return (0);
+		return (NULL);
 	i = 0;
-	while (len--)
+	while (len-- > 0)
 	{
 		sub[i] = *(s + start + i);
 		i++;

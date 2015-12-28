@@ -10,18 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_str.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
-	int		len;
+	t_size	len;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	ret = 0;
+	ret = NULL;
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	ret = ft_strnew(len);
+	if (!(ret = ft_strnew(len)))
+		return (NULL);
 	ret = ft_strcat(ret, s1);
 	ret = ft_strcat(ret, s2);
 	return (ret);

@@ -10,18 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_list.h>
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, t_size))
 {
-	if (!alst && !del)
-		return ;
-	while (*alst != 0)
+	while (*alst)
 	{
 		del((*alst)->content, (*alst)->content_size);
 		*alst = (*alst)->next;
 	}
 	ft_memdel((void**)alst);
-	*alst = 0;
+	*alst = NULL;
 }

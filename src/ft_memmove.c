@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 
 void	*ft_memmove(void *s1, const void *s2, t_size n)
@@ -17,7 +18,7 @@ void	*ft_memmove(void *s1, const void *s2, t_size n)
 	char		*tmp;
 
 	if (!(tmp = ft_memalloc(n)))
-		return (0);
+		return (NULL);
 	ft_memcpy(tmp, s2, n);
 	ft_memcpy(s1, tmp, n);
 	ft_memdel((void**)&tmp);

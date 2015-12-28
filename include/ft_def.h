@@ -12,8 +12,9 @@
 
 #ifndef FT_DEF_H
 # define FT_DEF_H
-
 # include <stddef.h>
+# define EXIT_SUCCESS	0
+# define EXIT_FAILURE	1
 
 typedef enum		e_bool
 {TRUE, FALSE}		t_bool;

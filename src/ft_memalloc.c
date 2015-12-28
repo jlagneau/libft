@@ -18,10 +18,10 @@ void	*ft_memalloc(t_size size)
 	char	*tmp;
 
 	if (size < 1)
-		return (0);
+		return (NULL);
 	tmp = 0;
 	if (!(tmp = malloc(size)))
-		return (0);
+		return (NULL);
 	ft_bzero(tmp, size);
 	return (tmp);
 }

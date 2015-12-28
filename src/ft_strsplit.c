@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_str.h>
 
@@ -74,14 +75,12 @@ char			**ft_strsplit(char const *s, char c)
 	int		words;
 	int		i;
 
-	if (s == 0)
-		return (0);
 	i = 0;
 	src_clean = ft_strctrim(s, c);
 	p = src_clean;
 	words = ft_count_words(src_clean, c);
 	if (!(ret = (char **)ft_memalloc(sizeof(char *) * words + 1)))
-		return (0);
+		return (NULL);
 	while (i < words)
 	{
 		while (*src_clean && *src_clean == c)

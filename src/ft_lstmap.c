@@ -10,24 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_list.h>
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*tmp;
-	t_list	*p;
+	t_list	*new;
 
 	if (!(tmp = (t_list *)ft_memalloc(sizeof(*lst))))
-		return (0);
-	p = tmp;
-	while (lst != 0)
+		return (NULL);
+	new = tmp;
+	while (lst)
 	{
 		*tmp = *f(lst);
 		if (!(tmp->next = (t_list *)ft_memalloc(sizeof(*lst))))
-			return (0);
+			return (NULL);
 		tmp = tmp->next;
 		lst = lst->next;
 	}
-	return (p);
+	return (new);
 }

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_str.h>
 
@@ -27,5 +28,5 @@ char	*ft_strstr(const char *s1, const char *s2)
 		if (ft_memcmp(src++, s2, len) == 0)
 			return (src - 1);
 	}
-	return (0);
+	return (NULL);
 }

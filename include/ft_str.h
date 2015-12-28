@@ -52,6 +52,5 @@ char	*ft_itoa(int n);
 int		ft_isspace(int c);
 void	ft_stradel(char ***a);
 t_size	ft_stralen(char **s);
-char	*ft_strrealloc(char **content, t_size new_size);
 
 #endif

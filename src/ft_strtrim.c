@@ -12,43 +12,35 @@
 
 #include <ft_str.h>
 
-static int		ft_iswhitespace(int c)
-{
-	if (c == 9 || c == 10 || c == 32)
-		return (1);
-	return (0);
-}
-
 static char		*ft_strip_front_spaces(char *s)
 {
-	while (ft_iswhitespace(*s))
-		s++;
-	return (s);
+	t_size		begin;
+
+	begin = 0;
+	while (ft_isspace(s[begin]))
+		begin++;
+	return (s + begin);
 }
 
 static char		*ft_strip_back_spaces(char *s)
 {
-	t_size		len;
+	t_size		last;
 
-	len = ft_strlen(s) - 1;
-	while (ft_iswhitespace(s[len]))
-		s[len--] = '\0';
+	last = ft_strlen(s) - 1;
+	while (ft_isspace(s[last]))
+	{
+		s[last] = '\0';
+		last--;
+	}
 	return (s);
 }
 
 char			*ft_strtrim(char const *s)
 {
-	char	*tmp;
-	char	*cpy;
-	char	*ret;
+	char		*tmp;
 
-	if (!s)
-		return (0);
-	cpy = ft_strdup(s);
-	tmp = cpy;
+	tmp = ft_strdup(s);
 	tmp = ft_strip_front_spaces(tmp);
 	tmp = ft_strip_back_spaces(tmp);
-	ret = ft_strdup(tmp);
-	ft_strdel(&cpy);
-	return (ret);
+	return (tmp);
 }

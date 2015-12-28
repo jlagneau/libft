@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_mem.h>
 #include <ft_list.h>
 
@@ -17,24 +18,16 @@ t_list		*ft_lstnew(void const *content, t_size content_size)
 {
 	t_list	*ret;
 
-	ret = 0;
+	ret = NULL;
 	if (!(ret = (t_list *)ft_memalloc(sizeof(t_list))))
-		return (0);
-	if (content == 0)
+		return (NULL);
+	if (!(ret->content = (t_list *)ft_memalloc(content_size)))
 	{
-		ret->content = 0;
-		ret->content_size = 0;
+		ft_memdel((void **)&ret);
+		return (NULL);
 	}
-	else
-	{
-		if (!(ret->content = (t_list *)ft_memalloc(content_size)))
-		{
-			ft_memdel((void **)&ret);
-			return (0);
-		}
-		ret->content = ft_memcpy(ret->content, content, content_size);
-		ret->content_size = content_size;
-	}
-	ret->next = 0;
+	ret->content = ft_memcpy(ret->content, content, content_size);
+	ret->content_size = content_size;
+	ret->next = NULL;
 	return (ret);
 }

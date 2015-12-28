@@ -16,11 +16,6 @@ void		ft_lstaddend(t_list **alst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (!*alst)
-		*alst = new;
-	else
-	{
-		tmp = ft_lstlast(*alst);
-		tmp->next = new;
-	}
+	tmp = ft_lstlast(*alst);
+	tmp->next = new;
 }

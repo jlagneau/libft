@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_str.h>
 
 char	*ft_strnstr(const char *s1, const char *s2, t_size n)
@@ -26,5 +27,5 @@ char	*ft_strnstr(const char *s1, const char *s2, t_size n)
 		if (ft_strncmp(src++, s2, len) == 0)
 			return (src - 1);
 	}
-	return (0);
+	return (NULL);
 }

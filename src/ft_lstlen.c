@@ -19,8 +19,6 @@ t_size	ft_lstlen(t_list *lst)
 
 	i = 0;
 	tmp = lst;
-	if (!lst)
-		return (i);
 	while (tmp)
 	{
 		tmp = tmp->next;

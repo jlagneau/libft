@@ -17,8 +17,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*ret;
 	unsigned int	i;
 
-	if (s == 0 && f == 0)
-		return (0);
 	i = 0;
 	ret = ft_strnew(ft_strlen(s));
 	while (s[i])
