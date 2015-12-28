@@ -24,13 +24,12 @@ DEPS_PATH = .dep/
 # Exec
 CC        = gcc
 AR        = ar
-RM        = rm
+RM        = rm -rf
 
 # Flags
-IFLAGS    = -I$(HEAD_PATH)
 CFLAGS    = -Wall -Wextra -Werror -pedantic
+CPPFLAGS  = -I$(HEAD_PATH)
 DEPSFLAGS = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
-RMFLAGS   = -rf
 ARFLAGS   = rcs
 
 # Files
@@ -39,6 +38,9 @@ DEPS      = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
 OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
 DEB_OBJS  = $(OBJS:.o=_debug.o)
 DEB_DEPS  = $(DEB_OBJS:.o=.d)
+
+# Phony
+.PHONY: all clean fclean norme re redebug
 
 # Rules
 $(NAME): CFLAGS += -O3
@@ -56,14 +58,14 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	mkdir -p $(OBJS_PATH); \
 	mkdir -p $(DEPS_PATH); \
 	fi;
-	$(CC) $(IFLAGS) $(CFLAGS) $(DEPSFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
 
 $(OBJS_PATH)%_debug.o: $(SRCS_PATH)%.c
 	@if [ ! -d $(OBJS_PATH) ]; then \
 	mkdir -p $(OBJS_PATH); \
 	mkdir -p $(DEPS_PATH); \
 	fi;
-	$(CC) $(IFLAGS) $(CFLAGS) $(DEPSFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
 
 debug: $(DEB_NAME)
 
@@ -73,11 +75,11 @@ norme:
 all: $(NAME)
 
 clean:
-	$(RM) $(RMFLAGS) $(OBJS_PATH) $(DEPS_PATH)
+	$(RM) $(OBJS_PATH) $(DEPS_PATH)
 
 fclean:
-	$(RM) $(RMFLAGS) $(OBJS_PATH) $(DEPS_PATH)
-	$(RM) $(RMFLAGS) $(NAME) $(DEB_NAME)
+	$(RM) $(OBJS_PATH) $(DEPS_PATH)
+	$(RM) $(NAME) $(DEB_NAME)
 
 re: fclean all
 
@@ -85,5 +87,3 @@ redebug: fclean debug
 
 -include $(DEPS)
 -include $(DEB_DEPS)
-
-.PHONY: all clean fclean norme re redebug
