@@ -15,13 +15,13 @@
 
 void	ft_stradel(char ***a)
 {
-	t_size	i;
+	char	**tmp;
 
-	i = 0;
-	while (*a[i] != 0)
+	tmp = *a;
+	while (*tmp)
 	{
-		ft_strdel(&(*a[i]));
-		i++;
+		ft_strdel(&(*tmp));
+		tmp++;
 	}
 	free(*a);
 	*a = NULL;
