@@ -26,5 +26,6 @@ typedef						char*(*t_test_fun)(void);
 
 char						*all_tests(void);
 char						*test_memset(void);
+char						*test_bzero(void);
 
 #endif

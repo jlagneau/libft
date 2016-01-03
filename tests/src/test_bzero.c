@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   test_bzero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/01 16:53:06 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/01/01 16:53:06 by jlagneau         ###   ########.fr       */
+/*   Created: 2016/01/03 13:47:08 by jlagneau          #+#    #+#             */
+/*   Updated: 2016/01/03 13:47:08 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-t_test_fun			g_test_fun[3] = {
-	test_memset,
-	test_bzero,
-	NULL
-};
-
-char				*all_tests(void)
+static char		*unit_test1(void)
 {
-	int				i;
+	char		origin[100];
+	char		custom[100];
 
-	i = 0;
-	while (g_test_fun[i])
-		TEST_ADD(g_test_fun[i++]);
+	bzero(origin, 100),
+	ft_bzero(custom, 100);
+	TEST_ASSERT(
+		"Compare ft_bzero values with original",
+		memcmp(origin, custom, 100) == 0
+	);
+	custom[0] = 1;
+	ft_bzero(custom, 0);
+	TEST_ASSERT(
+		"Check for ft_bzero with size 0",
+		custom[0] == 1
+	);
+	return (NULL);
+}
+
+char			*test_bzero(void)
+{
+	TEST_RUN(unit_test1);
 	return (NULL);
 }
