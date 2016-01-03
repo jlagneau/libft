@@ -6,31 +6,11 @@ Project of school 42 which aim to recode a part of the standard library "libc" f
 
 ---
 
-## Compile
+## Installation
 
-### 1. Normal
+    make && make test
 
-	make
-
-or :
-
-	make re
-
-to erase objects and rebuild everything.
-
-### 2. Compile with debug flags
-
-	make debug
-
-or :
-
-	make redebug
-
-to erase objects and rebuild everything with debug flags.
-
-## Test
-
-	make && make test
+There's no make install. Copy the file manually if you need to.
 
 ## License
 
