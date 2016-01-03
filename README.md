@@ -1,5 +1,7 @@
 # libft
 
+![](https://travis-ci.org/jlagneau/libft.svg)
+
 Project of school 42 which aim to recode a part of the standard library "libc" functions, with custom functions.
 
 ---
