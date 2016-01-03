@@ -12,17 +12,17 @@
 
 #include "test.h"
 
-static char		*test_example(void)
-{
-	TEST_ASSERT(
-		"Assert example in "__FILE__,
-		42 == 42
-	);
-	return (NULL);
-}
+t_test_fun			g_test_fun[2] = {
+	test_memset,
+	NULL
+};
 
-char			*all_tests(void)
+char				*all_tests(void)
 {
-	TEST_RUN(test_example);
+	int				i;
+
+	i = 0;
+	while (g_test_fun[i])
+		TEST_ADD(g_test_fun[i++]);
 	return (NULL);
 }

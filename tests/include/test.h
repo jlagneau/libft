@@ -13,14 +13,18 @@
 #ifndef TESTS_H
 # define TESTS_H
 # include <libft.h>
+# include <string.h>
 
-# define TEST_ASSERT(m,t)	if(1){nb_asserts++;if(!(t))return m;}
+# define TEST_ASSERT(m,t)	if(1){asrt++;if(!(t))return m" in tests/"__FILE__;}
 # define TEST_ADD(t)		if(1){char *m=t();if(m)return m;}
-# define TEST_RUN(t)		if(1){char *m=t();nb_tests++;if(m)return m;}
+# define TEST_RUN(t)		if(1){char *m=t();tsts++;if(m)return m;}
 
-int							nb_tests;
-int							nb_asserts;
+int							tsts;
+int							asrt;
+
+typedef						char*(*t_test_fun)(void);
 
 char						*all_tests(void);
+char						*test_memset(void);
 
 #endif
