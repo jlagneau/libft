@@ -1,11 +1,12 @@
-# LIBFT
+# libft
 
-Project of school 42 which aim to recode a part of the standard library "libc"
-functions, with custom functions.
+Project of school 42 which aim to recode a part of the standard library "libc" functions, with custom functions.
+
+---
 
 ## Compile
 
-### Normal
+### 1. Normal
 
 	make
 
@@ -13,9 +14,9 @@ or :
 
 	make re
 
-to erase objects and rebuid everything.
+to erase objects and rebuild everything.
 
-### Compile with debug flags
+### 2. Compile with debug flags
 
 	make debug
 
@@ -23,11 +24,11 @@ or :
 
 	make redebug
 
-to erase objects and rebuid everything with debug flags.
+to erase objects and rebuild everything with debug flags.
 
-## (TODO) Test
+## Test
 
-	make test && ./test/unit_test
+	make && make test
 
 ## License
 
