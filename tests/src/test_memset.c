@@ -14,24 +14,23 @@
 
 static char		*unit_test1(void)
 {
-	char		a[100];
-	char		b[100];
+	char		origin[100];
+	char		custom[100];
 
-	memset(a, 42, 100);
-	ft_memset(b, 42, 100);
-	TEST_ASSERT(
-		"Compare ft_memset values with original",
-		memcmp(a, b, 100) == 0
-	);
 	TEST_ASSERT(
 		"Compare ft_memset return with original",
-		memset(a, 84, 100) == ft_memset(a, 84, 100)
+		ft_memset(origin, 42, 100) == memset(origin, 42, 100)
 	);
-	a[0] = 1;
-	ft_memset(a, 0, 0);
+	ft_memset(custom, 42, 100);
 	TEST_ASSERT(
-		"Check if ft_memset size is 0",
-		a[0] == 1
+		"Compare ft_memset values with original",
+		memcmp(origin, custom, 100) == 0
+	);
+	custom[0] = 1;
+	ft_memset(custom, 0, 0);
+	TEST_ASSERT(
+		"Check for ft_memset with size 0",
+		custom[0] == 1
 	);
 	return (NULL);
 }
