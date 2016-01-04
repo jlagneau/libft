@@ -12,10 +12,11 @@
 
 #include "test.h"
 
-t_test_fun			g_test_fun[4] = {
+t_test_fun			g_test_fun[] = {
 	test_memset,
 	test_bzero,
 	test_memcpy,
+	test_memccpy,
 	NULL
 };
 
