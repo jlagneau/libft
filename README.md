@@ -1,6 +1,6 @@
 # libft
 
-![](https://travis-ci.org/jlagneau/libft.svg)
+[![travis build icon](https://travis-ci.org/jlagneau/libft.svg)](https://travis-ci.org/jlagneau/libft)
 
 Project of school 42 which aim to recode a part of the standard library "libc" functions, with custom functions.
 
