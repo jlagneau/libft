@@ -12,7 +12,7 @@
 
 #include "test.h"
 
-char			*src = "This is a test";
+char			*g_src = "This is a test";
 
 static char		*unit_test1(void)
 {
@@ -20,23 +20,20 @@ static char		*unit_test1(void)
 	char		*origin;
 	char		*custom;
 
-	custom = ft_memccpy(dst, src, 'a', 100);
-	origin = memccpy(dst, src, 'a', 100);
+	custom = ft_memccpy(dst, g_src, 'a', 100);
+	origin = memccpy(dst, g_src, 'a', 100);
 	TEST_ASSERT(
 		"Compare return of ft_memccpy with original",
-		custom == origin
-	);
-	custom = ft_memccpy(dst, src, 'Z', 100);
+		custom == origin);
+	custom = ft_memccpy(dst, g_src, 'Z', 100);
 	TEST_ASSERT(
 		"Verify return of ft_memccpy not found",
-		custom == NULL
-	);
-	custom = ft_memccpy(dst, src, 0, 0);
-	origin = memccpy(dst, src, 0, 0);
+		custom == NULL);
+	custom = ft_memccpy(dst, g_src, 0, 0);
+	origin = memccpy(dst, g_src, 0, 0);
 	TEST_ASSERT(
 		"Compare return of ft_memccpy with original for char and size = 0",
-		custom == origin
-	);
+		custom == origin);
 	return (NULL);
 }
 
@@ -47,12 +44,11 @@ static char		*unit_test2(void)
 
 	bzero(origin, 100);
 	bzero(custom, 100);
-	ft_memccpy(custom, src, 'a', 100);
-	memccpy(origin, src, 'a', 100);
+	ft_memccpy(custom, g_src, 'a', 100);
+	memccpy(origin, g_src, 'a', 100);
 	TEST_ASSERT(
 		"Compare dest of ft_memccpy with original",
-		memcmp(origin, custom, 100) == 0
-	);
+		memcmp(origin, custom, 100) == 0);
 	return (NULL);
 }
 

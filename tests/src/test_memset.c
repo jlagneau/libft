@@ -19,19 +19,16 @@ static char		*unit_test1(void)
 
 	TEST_ASSERT(
 		"Compare ft_memset return with original",
-		ft_memset(origin, 42, 100) == memset(origin, 42, 100)
-	);
+		ft_memset(origin, 42, 100) == memset(origin, 42, 100));
 	ft_memset(custom, 42, 100);
 	TEST_ASSERT(
 		"Compare ft_memset values with original",
-		memcmp(origin, custom, 100) == 0
-	);
+		memcmp(origin, custom, 100) == 0);
 	custom[0] = 1;
 	ft_memset(custom, 0, 0);
 	TEST_ASSERT(
 		"Check for ft_memset with size 0",
-		custom[0] == 1
-	);
+		custom[0] == 1);
 	return (NULL);
 }
 
