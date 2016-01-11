@@ -28,7 +28,7 @@ static char		*unit_test1(void)
 	);
 	custom = ft_memccpy(dst, src, 'Z', 100);
 	TEST_ASSERT(
-		"Verify return of ft_memccpy not found",
+		"Verify return of ft_memccpy for char not found",
 		custom == NULL
 	);
 	custom = ft_memccpy(dst, src, 0, 0);
