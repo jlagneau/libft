@@ -23,13 +23,11 @@ static char		*unit_test1(void)
 	memset(custom_src, 42, 100);
 	TEST_ASSERT(
 		"Verify ft_memcpy return",
-		ft_memcpy(custom_dst, custom_src, 100) == custom_dst
-	);
+		ft_memcpy(custom_dst, custom_src, 100) == custom_dst);
 	memcpy(origin_dst, origin_src, 100);
 	TEST_ASSERT(
 		"Compare ft_memcpy values with original",
-		memcmp(origin_dst, custom_dst, 100) == 0
-	);
+		memcmp(origin_dst, custom_dst, 100) == 0);
 	return (NULL);
 }
 

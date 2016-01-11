@@ -25,9 +25,9 @@ int			main(void)
 	else
 		ft_putendl("\033[32mALL TESTS PASSED\033[0m");
 	ft_putstr("Tests run: ");
-	ft_putnbr(tsts);
+	ft_putnbr(g_tst);
 	ft_putstr(", assertions: ");
-	ft_putnbr(asrt);
+	ft_putnbr(g_ast);
 	ft_putchar('\n');
 	return (result != NULL);
 }
