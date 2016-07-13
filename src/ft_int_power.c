@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_int_power.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:32:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/07/13 03:57:39 by jlagneau         ###   ########.fr       */
+/*   Created: 2016/07/13 04:57:22 by jlagneau          #+#    #+#             */
+/*   Updated: 2016/07/13 06:07:55 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
-
-void	ft_putnbr_fd(int n, int fd)
+int		ft_int_power(int base, unsigned int exp)
 {
-	const int	sign = (n < 0) ? -1 : 1;
+	int	result;
 
-	if (n < 0)
-		ft_putchar_fd('-', fd);
-	if (n < -9 || n > 9)
-		ft_putnbr_fd(n / 10 * sign, fd);
-	ft_putchar_fd(n % 10 * sign + '0', fd);
+	result = 1;
+	while (exp)
+	{
+		if (exp & 1)
+			result *= base;
+		exp >>= 1;
+		base *= base;
+	}
+	return (result);
 }
