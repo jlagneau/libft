@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 19:20:31 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/07 11:42:05 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ char	*ft_itoa(int n);
 int		ft_isspace(int c);
 void	ft_stradel(char ***a);
 t_size	ft_stralen(char **s);
+char	*ft_strrev(char *s);
+char	*ft_itoa_base(int n, int base);
 
 #endif
