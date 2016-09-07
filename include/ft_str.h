@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/07 11:42:05 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/07 13:06:16 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+char	ft_toupper(char c);
+char	ft_tolower(char c);
 char	*ft_strnew(t_size size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
