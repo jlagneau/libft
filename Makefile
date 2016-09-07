@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,9 +6,9 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2015/12/02 10:30:47 by jlagneau         ###   ########.fr        #
+#    Updated: 2016/09/07 20:14:38 by jlagneau         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 # Variables
 NAME      = libft.a
@@ -26,7 +26,7 @@ AR        = ar
 RM        = rm -rf
 
 # Flags
-CFLAGS    = -Wall -Wextra -Werror -pedantic
+CFLAGS    = -Wall -Wextra -Werror -pedantic -fPIC
 CPPFLAGS  = -I$(HEAD_PATH)
 DEPSFLAGS = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
 ARFLAGS   = rcs
