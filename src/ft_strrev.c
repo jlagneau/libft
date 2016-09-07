@@ -6,13 +6,20 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 11:15:34 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/07 11:35:36 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/07 11:53:36 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_str.h>
 
-#define FT_SWAP(a, b)	((a) ^= (b), (b) ^= (a), (a) ^= (b))
+void 	ft_swap(char *c1, char *c2)
+{
+	char	tmp;
+
+	tmp = *c1;
+	*c1 = *c2;
+	*c2 = tmp;
+}
 
 char					*ft_strrev(char *s)
 {
@@ -25,7 +32,7 @@ char					*ft_strrev(char *s)
 	end = len - 1;
 	while (start < end)
 	{
-		FT_SWAP(*(s + start), *(s + end));
+		ft_swap((s + start), (s + end));
 		start++;
 		end--;
 	}
