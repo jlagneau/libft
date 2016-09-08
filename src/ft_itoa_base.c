@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 10:58:27 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/08 14:12:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/08 14:15:00 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_str.h>
 
-char	*ft_itoa_base(int n, int base)
+char	*ft_itoa_base(unsigned int n, unsigned int base)
 {
 	char	str[255];
 	int		rem;
