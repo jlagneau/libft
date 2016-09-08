@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 10:58:27 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/07 11:13:43 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/08 14:12:11 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char	*ft_itoa_base(int n, int base)
 	if (n == 0)
 		return ft_strdup("0");
 	while (n != 0)
-    {
-        rem = n % base;
-        str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-        n /= base;
-    }
+	{
+		rem = n % base;
+		str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
+		n /= base;
+	}
 	str[i] = '\0';
 	return ft_strdup(ft_strrev(str));
 }
