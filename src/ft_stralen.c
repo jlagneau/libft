@@ -12,9 +12,9 @@
 
 #include <ft_def.h>
 
-t_size		ft_stralen(char **s)
+size_t		ft_stralen(char **s)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])

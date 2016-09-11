@@ -14,7 +14,7 @@
 #include <ft_mem.h>
 #include <ft_list.h>
 
-t_list		*ft_lstnew(void const *content, t_size content_size)
+t_list		*ft_lstnew(void const *content, size_t contensize_t)
 {
 	t_list	*ret;
 
@@ -22,17 +22,17 @@ t_list		*ft_lstnew(void const *content, t_size content_size)
 	if (!(ret = (t_list *)ft_memalloc(sizeof(t_list))))
 		return (NULL);
 	ret->content = NULL;
-	ret->content_size = 0;
+	ret->contensize_t = 0;
 	ret->next = NULL;
 	if (content != NULL)
 	{
-		if (!(ret->content = (t_list *)ft_memalloc(content_size)))
+		if (!(ret->content = (t_list *)ft_memalloc(contensize_t)))
 		{
 			ft_memdel((void **)&ret);
 			return (NULL);
 		}
-		ret->content = ft_memcpy(ret->content, content, content_size);
-		ret->content_size = content_size;
+		ret->content = ft_memcpy(ret->content, content, contensize_t);
+		ret->contensize_t = contensize_t;
 	}
 	return (ret);
 }

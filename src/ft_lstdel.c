@@ -14,11 +14,11 @@
 #include <ft_mem.h>
 #include <ft_list.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, t_size))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	while (*alst)
 	{
-		del((*alst)->content, (*alst)->content_size);
+		del((*alst)->content, (*alst)->contensize_t);
 		*alst = (*alst)->next;
 	}
 	ft_memdel((void**)alst);

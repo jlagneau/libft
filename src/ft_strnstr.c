@@ -13,10 +13,10 @@
 #include <ft_def.h>
 #include <ft_str.h>
 
-char	*ft_strnstr(const char *s1, const char *s2, t_size n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	char	*src;
-	t_size	len;
+	size_t	len;
 
 	src = (char *)s1;
 	len = ft_strlen(s2);

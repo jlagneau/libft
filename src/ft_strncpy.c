@@ -12,9 +12,9 @@
 
 #include <ft_mem.h>
 
-char	*ft_strncpy(char *s1, const char *s2, t_size n)
+char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {
-	t_size	i;
+	size_t	i;
 
 	i = 0;
 	ft_bzero(s1, n);

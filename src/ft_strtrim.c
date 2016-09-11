@@ -14,7 +14,7 @@
 
 static char		*ft_strip_front_spaces(char *s)
 {
-	t_size		begin;
+	size_t		begin;
 
 	begin = 0;
 	while (ft_isspace(s[begin]))
@@ -24,7 +24,7 @@ static char		*ft_strip_front_spaces(char *s)
 
 static char		*ft_strip_back_spaces(char *s)
 {
-	t_size		last;
+	size_t		last;
 
 	last = ft_strlen(s) - 1;
 	while (ft_isspace(s[last]))

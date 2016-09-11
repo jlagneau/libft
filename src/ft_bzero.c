@@ -12,7 +12,7 @@
 
 #include <ft_mem.h>
 
-void	ft_bzero(void *s, t_size n)
+void	ft_bzero(void *s, size_t n)
 {
 	s = ft_memset(s, 0, n);
 }

@@ -13,7 +13,7 @@
 #include <ft_mem.h>
 #include <stdlib.h>
 
-void	*ft_memalloc(t_size size)
+void	*ft_memalloc(size_t size)
 {
 	char	*tmp;
 

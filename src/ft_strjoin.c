@@ -16,7 +16,7 @@
 char		*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ret;
-	t_size	len;
+	size_t	len;
 
 	ret = NULL;
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;

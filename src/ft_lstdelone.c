@@ -13,11 +13,11 @@
 #include <ft_mem.h>
 #include <ft_list.h>
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, t_size))
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	if (alst == 0)
 		return ;
-	del((*alst)->content, (*alst)->content_size);
+	del((*alst)->content, (*alst)->contensize_t);
 	ft_memdel((void**)alst);
 	*alst = 0;
 }

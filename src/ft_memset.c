@@ -12,7 +12,7 @@
 
 #include <ft_def.h>
 
-void		*ft_memset(void *s, int c, t_size n)
+void		*ft_memset(void *s, int c, size_t n)
 {
 	char	*tmp;
 

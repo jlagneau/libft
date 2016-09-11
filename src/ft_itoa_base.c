@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 10:58:27 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/08 14:15:00 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/11 16:44:12 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_itoa_base(unsigned int n, unsigned int base)
 {
-	char	str[255];
+	char	str[64];
 	int		rem;
 	int		i;
 

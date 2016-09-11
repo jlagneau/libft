@@ -13,7 +13,7 @@
 #include <ft_def.h>
 #include <ft_mem.h>
 
-char	*ft_strnew(t_size size)
+char	*ft_strnew(size_t size)
 {
 	char	*tmp;
 

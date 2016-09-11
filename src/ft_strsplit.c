@@ -19,7 +19,7 @@ static char		*ft_strctrim(char const *s, char c)
 	char	*src;
 	char	*tmp;
 	char	*ret;
-	t_size	len;
+	size_t	len;
 
 	src = ft_strdup(s);
 	tmp = src;
@@ -33,9 +33,9 @@ static char		*ft_strctrim(char const *s, char c)
 	return (ret);
 }
 
-static t_size	ft_strclen(char const *s, char c)
+static size_t	ft_strclen(char const *s, char c)
 {
-	t_size	len;
+	size_t	len;
 
 	len = 0;
 	while (s[len] != '\0' && s[len] != c)

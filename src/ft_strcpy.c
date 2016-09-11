@@ -15,7 +15,7 @@
 
 char	*ft_strcpy(char *s1, const char *s2)
 {
-	t_size	len;
+	size_t	len;
 
 	len = ft_strlen(s2);
 	ft_bzero(s1, len + 1);

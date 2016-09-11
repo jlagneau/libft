@@ -13,7 +13,7 @@
 #include <ft_def.h>
 #include <ft_mem.h>
 
-void	*ft_memmove(void *s1, const void *s2, t_size n)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	char		*tmp;
 

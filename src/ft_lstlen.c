@@ -12,9 +12,9 @@
 
 #include <ft_list.h>
 
-t_size	ft_lstlen(t_list *lst)
+size_t	ft_lstlen(t_list *lst)
 {
-	t_size	i;
+	size_t	i;
 	t_list	*tmp;
 
 	i = 0;
