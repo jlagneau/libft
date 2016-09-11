@@ -6,44 +6,31 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:34:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 16:22:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2016/09/11 17:00:56 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_def.h>
 #include <ft_str.h>
-
-static int	ft_nbrlen(int n)
-{
-	int		i;
-	int		nb;
-
-	i = 0;
-	nb = n;
-	if (n == 0)
-		return (1);
-	while (nb)
-	{
-		nb /= 10;
-		i++;
-	}
-	return ((n < 0) ? i + 1 : i);
-}
 
 char		*ft_itoa(int n)
 {
-	int		nvalue;
-	int		nbrlen;
-	char	*tmp;
+	const t_bool	is_negative = (n < 0) ? TRUE : FALSE;
+	char			tmp[255];
+	int				rem;
+	int				i;
 
-	nvalue = n;
-	nbrlen = ft_nbrlen(n);
-	tmp = ft_strnew(nbrlen);
-	while (nbrlen--)
+	i = 0;
+	if (n == 0)
+		return (ft_strdup("0"));
+	while (n != 0)
 	{
-		tmp[nbrlen] = (n < 0) ? (n % 10) * -1 + 48 : (n % 10) + 48;
+		rem = (is_negative == TRUE) ? (n % 10) * -1 : n % 10;
 		n /= 10;
+		tmp[i++] = rem + '0';
 	}
-	if (nvalue < 0)
-		tmp[0] = '-';
-	return (tmp);
+	if (is_negative == TRUE)
+		tmp[i++] = '-';
+	tmp[i] = '\0';
+	return (ft_strdup(ft_strrev(tmp)));
 }
