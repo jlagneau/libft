@@ -8,4 +8,12 @@ compiler:
   - clang
   - gcc
 
-script: make && make test
+env:
+  - CFLAGS="-Weverything -Wpedantic -Wno-cast-qual"
+  - CFLAGS=-Wpedantic
+
+before_script:
+  - make
+
+script:
+  - make test

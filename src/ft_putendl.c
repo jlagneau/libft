@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:37:37 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:37:41 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:47:46 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
+#include <libft.h>
 
 void	ft_putendl(char const *s)
 {
-	ft_putendl_fd(s, 1);
+	ft_putendl_fd(s, STDOUT);
 }

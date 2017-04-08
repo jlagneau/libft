@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:50 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/29 11:09:45 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:19:57 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
+#include <libft.h>
 
-size_t	ft_strlen(char const *s)
+size_t		ft_strlen(char const *s)
 {
 	size_t	i;
 

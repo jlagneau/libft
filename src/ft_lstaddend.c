@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 08:36:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/08 21:31:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:27:13 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_list.h>
+#include <libft.h>
 
 void		ft_lstaddend(t_list **alst, t_list *new)
 {

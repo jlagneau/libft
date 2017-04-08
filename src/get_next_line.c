@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/02 08:36:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/08 21:31:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:43:34 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_gnl.h>
+#include <libft.h>
 #include <stdlib.h>
 #include <unistd.h>
 

@@ -6,13 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 18:50:05 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/11 18:32:53 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:33:25 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_mem.h>
-#include <ft_list.h>
+#include <libft.h>
 
 t_list		*ft_lstnew(void const *content, size_t content_size)
 {

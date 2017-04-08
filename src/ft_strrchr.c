@@ -6,23 +6,22 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:35 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:41:19 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:53:27 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strrchr(const char *s, int c)
+char		*ft_strrchr(const char *s, int c)
 {
-	char	*src;
+	size_t	i;
 
-	src = (char *)s + ft_strlen(s);
-	while (*src != (char)c)
+	i = ft_strlen(s);
+	while (s[i] != (unsigned char)c)
 	{
-		if (src == s)
+		if (&s[i] == s)
 			return (NULL);
-		src--;
+		i--;
 	}
-	return (src);
+	return ((char*)&s[i]);
 }

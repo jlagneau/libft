@@ -6,14 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 11:18:41 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/03/16 00:21:50 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:49:57 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
-#include <ft_str.h>
+#include <libft.h>
 
-void	ft_putnbr_base_fd(unsigned long n, char const *base, int fd)
+void		ft_putnbr_base_fd(unsigned long n, char const *base, int fd)
 {
 	size_t	base_size;
 

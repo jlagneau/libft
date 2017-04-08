@@ -6,22 +6,23 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:37:37 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:11:59 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
+#include <libft.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void					*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*src;
+	unsigned const char	*src = s;
+	size_t				i;
 
-	src = (unsigned char *)s;
+	i = 0;
 	while (n--)
 	{
-		if (*src == (unsigned char)c)
-			return (src);
-		src++;
+		if ((unsigned char)c == src[i])
+			return ((void *)&src[i]);
+		i++;
 	}
 	return (NULL);
 }

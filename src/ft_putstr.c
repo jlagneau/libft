@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:37:53 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 17:24:12 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:51:30 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
+#include <libft.h>
 
 void	ft_putstr(char const *s)
 {
-	ft_putstr_fd(s, 1);
+	ft_putstr_fd(s, STDOUT);
 }

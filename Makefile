@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2017/04/08 11:07:55 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/04/08 13:47:04 by jlagneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ DEPS_PATH = .dep/
 CFLAGS    += -Wall -Wextra -Werror
 CPPFLAGS  += -I$(HEAD_PATH)
 DEPSFLAGS += -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
-ARFLAGS   += rcs
+ARFLAGS    = rcs
 
 # Files
 SRCS     := $(shell find src -type f)

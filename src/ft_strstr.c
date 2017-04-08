@@ -6,18 +6,16 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:39:35 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:41:59 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:40:47 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_mem.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strstr(const char *s1, const char *s2)
+char		*ft_strstr(const char *s1, const char *s2)
 {
 	char	*src;
-	int		len;
+	size_t	len;
 
 	if (!*s1 && !*s2)
 		return ((char *)s1);

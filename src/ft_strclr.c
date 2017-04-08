@@ -6,12 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:09 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 14:03:34 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:59:32 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
-#include <ft_str.h>
+#include <libft.h>
 
 void	ft_strclr(char *s)
 {

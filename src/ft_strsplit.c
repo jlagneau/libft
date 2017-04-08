@@ -6,13 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 15:19:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:41:46 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:38:59 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_mem.h>
-#include <ft_str.h>
+#include <libft.h>
 
 static char		*ft_strctrim(char const *s, char c)
 {
@@ -43,10 +41,10 @@ static size_t	ft_strclen(char const *s, char c)
 	return (len);
 }
 
-static int		ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	char const	*src;
-	int			i;
+	size_t		i;
 
 	i = 0;
 	src = s;
@@ -72,8 +70,8 @@ char			**ft_strsplit(char const *s, char c)
 	char	*src_clean;
 	char	*p;
 	char	**ret;
-	int		words;
-	int		i;
+	size_t	words;
+	size_t	i;
 
 	i = 0;
 	src_clean = ft_strctrim(s, c);

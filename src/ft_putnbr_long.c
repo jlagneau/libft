@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/08 11:16:18 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/08 11:34:59 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:50:35 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
+#include <libft.h>
 
 void	ft_putnbr_long(long n)
 {
-	ft_putnbr_long_fd(n, 1);
+	ft_putnbr_long_fd(n, STDOUT);
 }

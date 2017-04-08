@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:39:10 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:10:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:29:56 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_str.h>
+#include <libft.h>
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {

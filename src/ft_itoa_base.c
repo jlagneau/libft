@@ -6,24 +6,23 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 10:58:27 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/03/16 00:29:54 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:34:43 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_itoa_base(unsigned int n, char const *base)
+char		*ft_itoa_base(unsigned int n, const char *base)
 {
-	char	str[64];
-	int		rem;
+	char	str[255];
 	int		i;
+	size_t	rem;
 	size_t	base_size;
 
 	i = 0;
 	base_size = ft_strlen(base);
 	if (!ft_strcmp(base, BASE_DECIMAL))
-		return ft_itoa(n);
+		return ft_itoa((int)n);
 	if (n == 0)
 		return ft_strdup("0");
 	while (n != 0)

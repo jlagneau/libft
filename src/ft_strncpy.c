@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:53 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/01 16:23:00 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:29:44 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <libft.h>
 
-char	*ft_strncpy(char *s1, const char *s2, size_t n)
+char		*ft_strncpy(char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

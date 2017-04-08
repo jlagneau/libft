@@ -6,13 +6,15 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/13 04:57:22 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/07/13 06:07:55 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:35:03 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_int_power(int base, unsigned int exp)
+#include <libft.h>
+
+int			ft_int_power(int base, unsigned int exp)
 {
-	int	result;
+	int		result;
 
 	result = 1;
 	while (exp)

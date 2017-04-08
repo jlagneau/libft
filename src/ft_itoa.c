@@ -6,18 +6,17 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:34:28 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/11 17:00:56 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:21:06 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char		*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	const t_bool	is_negative = (n < 0) ? TRUE : FALSE;
 	char			tmp[255];
-	int				rem;
+	char			rem;
 	int				i;
 
 	i = 0;
