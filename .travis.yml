@@ -8,12 +8,9 @@ compiler:
   - clang
   - gcc
 
-env:
-  - CFLAGS="-Weverything -Wpedantic -Wno-cast-qual"
-  - CFLAGS=-Wpedantic
-
 before_script:
-  - make
+  - if [[ "$CC" == "clang" ]]; then CFLAGS="-Weverything -Wpedantic -Wno-cast-qual" make ; fi
+  - if [[ "$CC" == "gcc"   ]]; then CFLAGS=-Wpedantic make                               ; fi
 
 script:
   - make test
