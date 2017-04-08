@@ -14,8 +14,8 @@ before_script:
       CFLAGS="-Weverything -Wpedantic -Wno-cast-qual" make;
     fi
   - >-
-    if [[ "$CC" == "gcc"   ]]; then
-      CFLAGS="-Wpedantic" make;
+    if [[ "$CC" == "gcc" ]]; then
+      make;
     fi
 
 script:
