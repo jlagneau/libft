@@ -9,8 +9,14 @@ compiler:
   - gcc
 
 before_script:
-  - if [[ "$CC" == "clang" ]]; then CFLAGS="-Weverything -Wpedantic -Wno-cast-qual" make ; fi
-  - if [[ "$CC" == "gcc"   ]]; then CFLAGS=-Wpedantic make                               ; fi
+  - >-
+    if [[ "$CC" == "clang" ]]; then
+      CFLAGS="-Weverything -Wpedantic -Wno-cast-qual" make;
+    fi
+  - >-
+    if [[ "$CC" == "gcc"   ]]; then
+      CFLAGS="-Wpedantic" make;
+    fi
 
 script:
   - make test
