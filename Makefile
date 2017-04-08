@@ -6,13 +6,18 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2016/09/07 20:14:38 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/04/08 11:07:55 by jlagneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
 NAME      = libft.a
 DEB_NAME  = libft_debug.a
+
+# Exec
+CC       ?= gcc
+AR        = ar
+RM        = rm -rf
 
 # Directories
 SRCS_PATH = src/
@@ -21,15 +26,11 @@ HEAD_PATH = include/
 OBJS_PATH = .obj/
 DEPS_PATH = .dep/
 
-# Exec
-AR        = ar
-RM        = rm -rf
-
 # Flags
-CFLAGS    = -Wall -Wextra -Werror -pedantic -fPIC
-CPPFLAGS  = -I$(HEAD_PATH)
-DEPSFLAGS = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
-ARFLAGS   = rcs
+CFLAGS    += -Wall -Wextra -Werror
+CPPFLAGS  += -I$(HEAD_PATH)
+DEPSFLAGS += -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
+ARFLAGS   += rcs
 
 # Files
 SRCS     := $(shell find src -type f)
@@ -37,7 +38,7 @@ DEPS      = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
 OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
 
 DEB_OBJS  = $(OBJS:.o=_debug.o)
-DEB_DEPS  = $(addprefix $(DEPS_PATH), $(notdir $(DEB_OBJS:.o=.d)))
+DEB_DEPS  = $(DEPS:.d=_debug.d)
 
 # Phony
 .PHONY: all clean fclean norme re redebug
