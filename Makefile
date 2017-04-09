@@ -73,7 +73,7 @@ clean:
 fclean:
 	@make -C tests fclean
 	$(RM) $(OBJS_PATH) $(DEPS_PATH)
-	$(RM) $(NAME) $(DEB_NAME)
+	$(RM) $(NAME) $(DEB_NAME) test
 
 re: fclean all
 
