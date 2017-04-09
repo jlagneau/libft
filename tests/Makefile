@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2015/12/04 08:46:16 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/04/09 10:29:58 by jlagneau         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,8 +27,8 @@ GDATE    := $(shell git show -s --format="%ci" HEAD)
 endif
 
 # Directories
-PRJ_PATH = ../
-PRJ_INC  = ../include/
+PRJ_PATH  = ../
+PRJ_INC   = ../include/
 
 SRCS_PATH = src/
 HEAD_PATH = include/
@@ -37,38 +37,37 @@ OBJS_PATH = .obj/
 DEPS_PATH = .dep/
 
 # Exec
-CC        = gcc
+CC       ?= gcc
 RM        = rm -rf
 
 # Flags
-CFLAGS    = -Wall -Wextra -Werror -pedantic
-CPPFLAGS  = -I$(HEAD_PATH) -I$(PRJ_INC)
-LDFLAGS   = -L$(PRJ_PATH)
-LDLIBS    =
+CFLAGS   ?= -Wall -Wextra -Werror
+CPPFLAGS += -I$(HEAD_PATH) -I$(PRJ_INC)
+LDFLAGS  += -L$(PRJ_PATH)
 DEPSFLAGS = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
 
 # Files
 SRCS     := $(shell find src -type f)
 
-DEPS      = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
 OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
+DEPS      = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
 
 DEB_OBJS  = $(OBJS:.o=_debug.o)
-DEB_DEPS  = $(addprefix $(DEPS_PATH), $(notdir $(DEB_OBJS:.o=.d)))
+DEB_DEPS  = $(DEPS:.d=_debug.d)
 
 # Phony
 .PHONY: all clean fclean norme re redebug
 
 # Rules
 $(NAME): CFLAGS += -O3
-$(NAME): LDLIBS += -lft
+$(NAME): LDFLAGS += -lft
 $(NAME): $(OBJS)
-	$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+	$(CC) $^ $(LDFLAGS) -o $@
 
 debug: CFLAGS += -g3
-debug: LDLIBS += -lft_debug
+debug: LDFLAGS += -lft_debug
 debug: $(DEB_OBJS)
-	$(CC) $^ $(LDFLAGS) $(LDLIBS) -o $@
+	$(CC) $^ $(LDFLAGS) -o $@
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	@mkdir -p $(OBJS_PATH) $(DEPS_PATH)
@@ -77,9 +76,6 @@ $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 $(OBJS_PATH)%_debug.o: $(SRCS_PATH)%.c
 	@mkdir -p $(OBJS_PATH) $(DEPS_PATH)
 	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
-
-norme:
-	@norminette ./**/*.{h,c}
 
 all: $(NAME)
 
