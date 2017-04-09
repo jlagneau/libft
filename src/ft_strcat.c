@@ -6,20 +6,18 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:02 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/29 11:33:11 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:53:34 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+char			*ft_strcat(char *s1, const char *s2)
 {
 	char		*d;
-	const char	*s;
 
 	d = s1;
-	s = s2;
 	d += ft_strlen(d);
-	d = ft_strcpy(d, s);
+	d = ft_strcpy(d, s2);
 	return (s1);
 }

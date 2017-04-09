@@ -6,37 +6,37 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:17 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:39:45 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:19:00 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_str.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*d;
-	char	*s;
 	size_t	n;
 	size_t	len_dst;
+	size_t	i;
+	size_t	j;
 
 	n = size;
-	d = dst;
-	s = (char *)src;
-	while (n-- != 0 && *d != '\0')
-		d++;
-	len_dst = d - dst;
-	n = size - len_dst;
-	if (n == 0)
-		return (len_dst + ft_strlen(s));
-	while (*s != '\0')
+	i = 0;
+	while (n-- != 0 && dst[i])
+		i++;
+	len_dst = (size_t)(&dst[i] - dst);
+	if ((n = size - len_dst) == 0)
+		return (len_dst + ft_strlen(src));
+	j = 0;
+	while (src[j])
 	{
 		if (n != 1)
 		{
-			*d++ = *s;
+			dst[i] = src[j];
 			n--;
 		}
-		s++;
+		i++;
+		j++;
 	}
-	*d = '\0';
-	return (len_dst + (s - src));
+	dst[i] = '\0';
+	return (len_dst + (size_t)(&src[i] - src));
 }

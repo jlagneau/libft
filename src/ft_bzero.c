@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:35:22 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/24 12:16:25 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:17:22 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_mem.h>
+#include <libft.h>
 
 void	ft_bzero(void *s, size_t n)
 {

@@ -6,11 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:40:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 16:02:44 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:41:24 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_str.h>
+#include <libft.h>
 
 static char		*ft_strip_front_spaces(char *s)
 {

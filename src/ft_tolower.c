@@ -6,9 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:21 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/09/07 13:04:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:42:23 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 char	ft_tolower(char c)
 {

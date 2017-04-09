@@ -6,22 +6,25 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:08 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 19:31:17 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:23:49 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char	*d;
+	size_t	i;
 
+	i = 0;
 	d = s1;
-	s = s2;
 	d += ft_strlen(d);
-	while (n-- && *s)
-		*d++ = *s++;
-	*d = '\0';
+	while (n-- && s2[i])
+	{
+		d[i] = s2[i];
+		i++;
+	}
+	d[i] = '\0';
 	return (s1);
 }

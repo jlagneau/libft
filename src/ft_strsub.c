@@ -6,14 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 09:08:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 15:39:03 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:41:44 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;

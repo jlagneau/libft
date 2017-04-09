@@ -6,10 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:31:56 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 13:53:28 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:01:55 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
 #include <stdlib.h>
 
 void	ft_strdel(char **as)

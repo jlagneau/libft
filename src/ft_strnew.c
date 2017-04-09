@@ -6,12 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:30:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/12/02 17:40:39 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:30:14 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_mem.h>
+#include <libft.h>
 
 char	*ft_strnew(size_t size)
 {

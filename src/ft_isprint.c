@@ -6,9 +6,11 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:36:20 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 18:17:10 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 11:18:45 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_isprint(int c)
 {

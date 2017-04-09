@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:37:31 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/21 08:37:35 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 12:47:01 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_io.h>
+#include <libft.h>
 
 void	ft_putchar(char c)
 {
-	ft_putchar_fd(c, 1);
+	ft_putchar_fd(c, STDOUT);
 }

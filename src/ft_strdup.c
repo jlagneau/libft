@@ -6,15 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:24 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/26 13:54:29 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:02:15 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_def.h>
-#include <ft_mem.h>
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strdup(const char *s)
+char		*ft_strdup(const char *s)
 {
 	char	*dest;
 	size_t	len;

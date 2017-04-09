@@ -6,13 +6,13 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:04:53 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 14:14:51 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:20:16 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_str.h>
+#include <libft.h>
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char		*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*ret;
 	int		i;

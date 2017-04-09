@@ -6,15 +6,20 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:38:36 by jlagneau          #+#    #+#             */
-/*   Updated: 2013/11/25 14:05:06 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/08 13:04:42 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+#include <libft.h>
+
+void		ft_striter(char *s, void (*f)(char *))
 {
-	if (s != 0 && f != 0)
+	size_t	i;
+
+	i = 0;
+	while (s[i])
 	{
-		while (*s)
-			f(s++);
+		f(&s[i]);
+		i++;
 	}
 }

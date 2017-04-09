@@ -6,38 +6,39 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2016/09/07 20:14:38 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/04/08 14:28:30 by jlagneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
-NAME      = libft.a
-DEB_NAME  = libft_debug.a
-
-# Directories
-SRCS_PATH = src/
-HEAD_PATH = include/
-
-OBJS_PATH = .obj/
-DEPS_PATH = .dep/
+NAME       = libft.a
+DEB_NAME   = libft_debug.a
 
 # Exec
-AR        = ar
-RM        = rm -rf
+CC        ?= gcc
+AR         = ar
+RM         = rm -rf
+
+# Directories
+SRCS_PATH  = src/
+HEAD_PATH  = include/
+
+OBJS_PATH  = .obj/
+DEPS_PATH  = .dep/
 
 # Flags
-CFLAGS    = -Wall -Wextra -Werror -pedantic -fPIC
-CPPFLAGS  = -I$(HEAD_PATH)
-DEPSFLAGS = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
-ARFLAGS   = rcs
+CFLAGS    ?= -Wall -Wextra -Werror
+CPPFLAGS  += -I$(HEAD_PATH)
+DEPSFLAGS  = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
+ARFLAGS    = rcs
 
 # Files
-SRCS     := $(shell find src -type f)
-DEPS      = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
-OBJS      = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
+SRCS      := $(shell find src -type f)
+DEPS       = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
+OBJS       = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
 
-DEB_OBJS  = $(OBJS:.o=_debug.o)
-DEB_DEPS  = $(addprefix $(DEPS_PATH), $(notdir $(DEB_OBJS:.o=.d)))
+DEB_OBJS   = $(OBJS:.o=_debug.o)
+DEB_DEPS   = $(DEPS:.d=_debug.d)
 
 # Phony
 .PHONY: all clean fclean norme re redebug
@@ -63,9 +64,6 @@ $(OBJS_PATH)%_debug.o: $(SRCS_PATH)%.c
 
 debug: $(DEB_NAME)
 
-norme:
-	@norminette ./**/*.{h,c}
-
 all: $(NAME)
 
 clean:
@@ -83,7 +81,7 @@ redebug: fclean debug
 
 test: all
 	@make -C tests
-	@./tests/test
+	@ln -s tests/test test
 
 -include $(DEPS)
 -include $(DEB_DEPS)
