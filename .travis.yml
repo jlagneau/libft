@@ -9,11 +9,15 @@ compiler:
   - gcc
 
 before_script:
+  # Use -Weverything as CFLAGS.
+  # -Wno-cast-qual required to respect prototype return for few functions.
   - >
     if [[ "$CC" == "clang" ]]; then
       CFLAGS="-Weverything -Wno-cast-qual" make;
       make test;
     fi
+
+  # Leave CFLAGS as set in Makefile.
   - >
     if [[ "$CC" == "gcc" ]]; then
       make;
