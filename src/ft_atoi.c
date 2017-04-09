@@ -12,6 +12,23 @@
 
 #include <libft.h>
 
+static int		power_of_ten(unsigned int exp)
+{
+	int			result;
+	int			base;
+
+	result = 1;
+	base = 10;
+	while (exp)
+	{
+		if (exp & 1)
+			result *= base;
+		exp >>= 1;
+		base *= base;
+	}
+	return (result);
+}
+
 int				ft_atoi(const char *str)
 {
 	t_bool		is_negative;
@@ -34,6 +51,6 @@ int				ft_atoi(const char *str)
 		num_size++;
 	ret = 0;
 	while (num_size-- > 0)
-		ret += (str[pos++] - '0') * ft_int_power(10, (unsigned int)num_size);
+		ret += (str[pos++] - '0') * power_of_ten((unsigned int)num_size);
 	return ((is_negative == TRUE) ? -ret : ret);
 }
