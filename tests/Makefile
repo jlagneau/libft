@@ -13,19 +13,6 @@
 # Variables
 NAME      = test
 
-# Information variables
-ISGIT     := $(shell find . -name ".git" -type d)
-HASTAGS   := $(shell git tag)
-
-ifneq (, $(strip $(ISGIT)))
-ifneq (, $(strip $(HASTAGS)))
-VER      := $(shell git describe --tags `git rev-list --tags --max-count=1`)
-else
-VER      := $(shell git rev-parse --short HEAD)
-endif
-GDATE    := $(shell git show -s --format="%ci" HEAD)
-endif
-
 # Directories
 PRJ_PATH  = ../
 PRJ_INC   = ../include/
