@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <execinfo.h>
@@ -18,20 +19,15 @@
 void	ft_putstr_fd(char const *s, int fd)
 {
 	int		nptr;
-	int		i;
 	size_t	size;
 	void	*tmp[BUFF_SIZE];
 
 	size = ft_strlen(s);
 	if (write(fd, s, size) != (ssize_t)size)
 	{
-		i = 0;
 		nptr = backtrace(tmp, BUFF_SIZE);
-		while (i < nptr)
-		{
-			ft_putendl_fd(tmp[i], STDERR);
-			i++;
-		}
+		backtrace_symbols_fd(tmp, nptr, STDERR);
+		perror(__FILE__);
 		exit(-1);
 	}
 }
