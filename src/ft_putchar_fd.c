@@ -19,5 +19,5 @@
 void		ft_putchar_fd(char c, int fd)
 {
 	if (write(fd, &c, 1) != 1)
-		ft_print_error(__FILE__);
+		ft_puterr_and_exit(__FILE__);
 }

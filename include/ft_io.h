@@ -25,6 +25,6 @@ void	ft_putnbr_long(long n);
 void	ft_putnbr_long_fd(long n, int fd);
 void	ft_putnbr_base(unsigned long n, char const *base);
 void	ft_putnbr_base_fd(unsigned long n, char const *base, int fd);
-void	ft_print_error(const char *filename) __attribute__ ((noreturn));
+void	ft_puterr_and_exit(const char *filename) __attribute__ ((noreturn));
 
 #endif

@@ -19,5 +19,5 @@ void		ft_putstr_fd(char const *s, int fd)
 
 	size = ft_strlen(s);
 	if (write(fd, s, size) != (ssize_t)size)
-		ft_print_error(__FILE__);
+		ft_puterr_and_exit(__FILE__);
 }
