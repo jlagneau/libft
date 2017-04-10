@@ -18,5 +18,4 @@
 # include <ft_list.h>
 # include <ft_str.h>
 # include <ft_io.h>
-# include <ft_math.h>
 #endif

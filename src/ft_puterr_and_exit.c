@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   ft_puterr_and_exit.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/13 05:00:55 by jlagneau          #+#    #+#             */
-/*   Updated: 2016/07/13 06:08:42 by jlagneau         ###   ########.fr       */
+/*   Created: 2017/04/10 02:27:43 by jlagneau          #+#    #+#             */
+/*   Updated: 2017/04/10 02:27:43 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
+#include <libft.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <execinfo.h>
 
-int		ft_int_power(int base, unsigned int exp);
+void		ft_puterr_and_exit(const char *filename)
+{
+	int		nptr;
+	void	*tmp[BUFF_SIZE];
 
-#endif
+	perror(filename);
+	nptr = backtrace(tmp, BUFF_SIZE);
+	backtrace_symbols_fd(tmp, nptr, STDERR);
+	exit(-1);
+}

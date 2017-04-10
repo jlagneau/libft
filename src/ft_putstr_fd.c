@@ -11,27 +11,13 @@
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <stdlib.h>
 #include <unistd.h>
-#include <execinfo.h>
 
-void	ft_putstr_fd(char const *s, int fd)
+void		ft_putstr_fd(char const *s, int fd)
 {
-	int		nptr;
-	int		i;
 	size_t	size;
-	void	*tmp[BUFF_SIZE];
 
 	size = ft_strlen(s);
 	if (write(fd, s, size) != (ssize_t)size)
-	{
-		i = 0;
-		nptr = backtrace(tmp, BUFF_SIZE);
-		while (i < nptr)
-		{
-			ft_putendl_fd(tmp[i], STDERR);
-			i++;
-		}
-		exit(-1);
-	}
+		ft_puterr_and_exit(__FILE__);
 }
