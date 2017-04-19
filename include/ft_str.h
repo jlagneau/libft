@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/08 13:48:47 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/19 10:52:43 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,8 @@ size_t	ft_stralen(char **s);
 char	*ft_strrev(char *s);
 char	*ft_itoa_base(unsigned int n, char const *base);
 size_t	ft_nbrlen(long n);
+char	*ft_ltoa(long n);
+char	*ft_ultoa(unsigned long n);
+char	*ft_uitoa(unsigned int n);
 
 #endif
