@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_ltoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/07 10:58:27 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/19 11:58:33 by jlagneau         ###   ########.fr       */
+/*   Created: 2017/04/19 11:55:23 by jlagneau          #+#    #+#             */
+/*   Updated: 2017/04/19 12:03:03 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char		*ft_itoa_base(unsigned int n, const char *base)
+char		*ft_ltoa_base(unsigned long n, const char *base)
 {
-	char	str[257];
+	char	str[513];
 	int		i;
 	size_t	rem;
 	size_t	base_size;
