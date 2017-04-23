@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/23 02:31:26 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/23 12:13:04 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/23 14:18:19 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char		*ft_winttostr(const wint_t c);
 char		*ft_wchartostr(const wchar_t *s);
 wchar_t		*ft_wstrncpy(wchar_t *s1, const wchar_t *s2, size_t n);
 wchar_t		*ft_wstrnew(size_t size);
+void		ft_wstrdel(wchar_t **as);
 
 #endif
