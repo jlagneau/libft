@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchartostr.c                                    :+:      :+:    :+:   */
+/*   ft_wstrncpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/23 02:51:08 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/23 13:40:28 by jlagneau         ###   ########.fr       */
+/*   Created: 2017/04/23 12:00:44 by jlagneau          #+#    #+#             */
+/*   Updated: 2017/04/23 12:03:17 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char			*ft_wchartostr(const wchar_t *s)
+wchar_t		*ft_wstrncpy(wchar_t *s1, const wchar_t *s2, size_t n)
 {
-	size_t		i;
-	char		*tmp;
-	ssize_t		len;
+	size_t	i;
 
 	i = 0;
-	tmp = NULL;
-	len = ft_wstrlen(s);
-	if (len == -1)
-		return (NULL);
-	if (!(tmp = ft_strnew((size_t)len)))
-		ft_puterr_and_exit(__FILE__);
-	while (s[i])
+	ft_bzero(s1, n * sizeof (wchar_t));
+	while (s2[i] && i < n)
 	{
-		tmp = ft_strcat(tmp, ft_winttostr((wint_t)s[i]));
+		s1[i] = s2[i];
 		i++;
 	}
-	return (tmp);
+	return (s1);
 }

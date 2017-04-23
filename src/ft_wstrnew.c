@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchartostr.c                                    :+:      :+:    :+:   */
+/*   ft_wstrnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/23 02:51:08 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/23 13:40:28 by jlagneau         ###   ########.fr       */
+/*   Created: 2017/04/23 12:10:25 by jlagneau          #+#    #+#             */
+/*   Updated: 2017/04/23 13:38:27 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char			*ft_wchartostr(const wchar_t *s)
+wchar_t		*ft_wstrnew(size_t size)
 {
-	size_t		i;
-	char		*tmp;
-	ssize_t		len;
+	wchar_t		*tmp;
 
-	i = 0;
 	tmp = NULL;
-	len = ft_wstrlen(s);
-	if (len == -1)
+	if (!(tmp = (wchar_t*)ft_memalloc(size * sizeof (wchar_t) + 1)))
 		return (NULL);
-	if (!(tmp = ft_strnew((size_t)len)))
-		ft_puterr_and_exit(__FILE__);
-	while (s[i])
-	{
-		tmp = ft_strcat(tmp, ft_winttostr((wint_t)s[i]));
-		i++;
-	}
 	return (tmp);
 }
