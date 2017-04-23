@@ -6,7 +6,7 @@
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/23 02:51:08 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/23 02:57:48 by jlagneau         ###   ########.fr       */
+/*   Updated: 2017/04/23 13:40:28 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char			*ft_wchartostr(const wchar_t *s)
 		ft_puterr_and_exit(__FILE__);
 	while (s[i])
 	{
-		tmp = ft_strcat(tmp, ft_winttostr(s[i]));
+		tmp = ft_strcat(tmp, ft_winttostr((wint_t)s[i]));
 		i++;
 	}
 	return (tmp);
