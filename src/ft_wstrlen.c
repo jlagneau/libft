@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 08:29:44 by jlagneau          #+#    #+#             */
-/*   Updated: 2017/04/23 02:33:18 by jlagneau         ###   ########.fr       */
+/*   Created: 2017/04/23 02:24:33 by jlagneau          #+#    #+#             */
+/*   Updated: 2017/04/23 02:33:59 by jlagneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <ft_def.h>
-# include <ft_mem.h>
-# include <ft_gnl.h>
-# include <ft_list.h>
-# include <ft_str.h>
-# include <ft_io.h>
-# include <ft_wchar.h>
-#endif
+#include <libft.h>
+
+ssize_t		ft_wstrlen(const wchar_t *s)
+{
+	size_t		i;
+	ssize_t		tmp;
+	ssize_t		ret;
+
+	i = 0;
+	ret = 0;
+	while (s[i])
+	{
+		tmp = ft_wcharlen(s[i]);
+		if (tmp == -1)
+			return (-1);
+		ret += tmp;
+		i++;
+	}
+	return (ret);
+}
