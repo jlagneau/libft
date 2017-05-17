@@ -6,7 +6,7 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2017/05/17 03:56:15 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/05/17 04:10:00 by jlagneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,10 +92,10 @@ $(OBJS_PATH):
 $(DEPS_PATH):
 	mkdir -p $(DEPS_PATH) $(addprefix $(DEPS_PATH), $(SRCS_SUB))
 
-$(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	$(COMPILE)
 
-$(OBJS_PATH)/%_debug.o: $(SRCS_PATH)/%.c
+$(OBJS_PATH)%_debug.o: $(SRCS_PATH)%.c
 	$(COMPILE)
 
 debug: $(DEB_NAME)
@@ -118,7 +118,7 @@ redebug: | fclean
 
 test: all
 	$(MAKETEST)
-	ln -s tests/test $(TEST_NAME)
+	@ln -sf tests/test $(TEST_NAME)
 
 -include $(DEPS)
 -include $(DEB_DEPS)
