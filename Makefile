@@ -6,13 +6,18 @@
 #    By: jlagneau <jlagneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/21 08:29:58 by jlagneau          #+#    #+#              #
-#    Updated: 2017/04/08 14:28:30 by jlagneau         ###   ########.fr        #
+#    Updated: 2017/05/17 03:56:15 by jlagneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#
 # Variables
+#
+
+# Name of the library
 NAME       = libft.a
 DEB_NAME   = libft_debug.a
+TEST_NAME  = test
 
 # Exec
 CC        ?= gcc
@@ -20,25 +25,51 @@ AR         = ar
 RM         = rm -rf
 
 # Directories
-SRCS_PATH  = src/
-HEAD_PATH  = include/
+SRCS_PATH  = src
+HEAD_PATH  = include
 
-OBJS_PATH  = .obj/
-DEPS_PATH  = .dep/
+BUILD_DIR  = build
+OBJS_PATH  = $(BUILD_DIR)/obj
+DEPS_PATH  = $(BUILD_DIR)/dep
+
+TEST_PATH  = tests
 
 # Flags
 CFLAGS    ?= -Wall -Wextra -Werror
 CPPFLAGS  += -I$(HEAD_PATH)
-DEPSFLAGS  = -MMD -MF"$(DEPS_PATH)$(notdir $(@:.o=.d))"
+DEPSFLAGS  = -MMD -MF"$(subst $(OBJS_PATH),$(DEPS_PATH),$(@:.o=.d))"
 ARFLAGS    = rcs
 
 # Files
 SRCS      := $(shell find src -type f)
-DEPS       = $(addprefix $(DEPS_PATH), $(notdir $(SRCS:.c=.d)))
-OBJS       = $(addprefix $(OBJS_PATH), $(notdir $(SRCS:.c=.o)))
+SRCS_SUB  := $(subst $(SRCS_PATH),, $(shell find src -mindepth 1 -type d))
 
-DEB_OBJS   = $(OBJS:.o=_debug.o)
-DEB_DEPS   = $(DEPS:.d=_debug.d)
+OBJS      := $(subst $(SRCS_PATH), $(OBJS_PATH), $(SRCS:.c=.o))
+DEPS      := $(subst $(SRCS_PATH), $(DEPS_PATH), $(SRCS:.c=.d))
+
+DEB_OBJS  := $(OBJS:.o=_debug.o)
+DEB_DEPS  := $(DEPS:.d=_debug.d)
+
+#
+# Macro
+#
+
+define COMPILE
+$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
+endef
+
+define MAKETEST
+@$(MAKE) -C $(TEST_PATH) $(1)
+endef
+
+define LINK
+$(AR) $(ARFLAGS) $@ $^
+ranlib $@
+endef
+
+#
+# Rules
+#
 
 # Phony
 .PHONY: all clean fclean norme re redebug
@@ -46,42 +77,48 @@ DEB_DEPS   = $(DEPS:.d=_debug.d)
 # Rules
 $(NAME): CFLAGS += -O3
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $@ $^
-	ranlib $@
+	$(LINK)
 
 $(DEB_NAME): CFLAGS += -g3
 $(DEB_NAME): $(DEB_OBJS)
-	$(AR) $(ARFLAGS) $@ $^
-	ranlib $@
+	$(LINK)
 
-$(OBJS_PATH)%.o: $(SRCS_PATH)%.c
-	@mkdir -p $(OBJS_PATH) $(DEPS_PATH)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
+$(OBJS): | $(OBJS_PATH) $(DEPS_PATH)
+$(DEB_OBJS): | $(OBJS_PATH) $(DEPS_PATH)
 
-$(OBJS_PATH)%_debug.o: $(SRCS_PATH)%.c
-	@mkdir -p $(OBJS_PATH) $(DEPS_PATH)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEPSFLAGS) -c $< -o $@
+$(OBJS_PATH):
+	mkdir -p $(OBJS_PATH) $(addprefix $(OBJS_PATH), $(SRCS_SUB))
+
+$(DEPS_PATH):
+	mkdir -p $(DEPS_PATH) $(addprefix $(DEPS_PATH), $(SRCS_SUB))
+
+$(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
+	$(COMPILE)
+
+$(OBJS_PATH)/%_debug.o: $(SRCS_PATH)/%.c
+	$(COMPILE)
 
 debug: $(DEB_NAME)
 
 all: $(NAME)
 
 clean:
-	@make -C tests clean
-	$(RM) $(OBJS_PATH) $(DEPS_PATH)
+	$(call MAKETEST, clean)
+	$(RM) $(BUILD_DIR)
 
 fclean:
-	@make -C tests fclean
-	$(RM) $(OBJS_PATH) $(DEPS_PATH)
-	$(RM) $(NAME) $(DEB_NAME) test
+	$(call MAKETEST, fclean)
+	$(RM) $(BUILD_DIR) $(NAME) $(DEB_NAME) $(TEST_NAME)
 
-re: fclean all
+re: | fclean
+	@$(MAKE) all
 
-redebug: fclean debug
+redebug: | fclean
+	@$(MAKE) debug
 
 test: all
-	@make -C tests
-	@ln -s tests/test test
+	$(MAKETEST)
+	ln -s tests/test $(TEST_NAME)
 
 -include $(DEPS)
 -include $(DEB_DEPS)
