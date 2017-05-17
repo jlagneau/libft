@@ -1,8 +1,6 @@
-build/
+build
 libft.a
 libft_debug.a
 test
-tests/.obj/
-tests/.dep/
 tests/test
 tests/debug
