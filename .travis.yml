@@ -13,15 +13,15 @@ before_script:
   # -Wno-cast-qual required to respect prototype return for few functions.
   - >
     if [[ "$CC" == "clang" ]]; then
-      CFLAGS="-Weverything -Wno-cast-qual" make;
-      make test;
+      CFLAGS="-Weverything -Wno-cast-qual" make -j;
+      make -j test;
     fi
 
   # Leave CFLAGS as set in Makefile.
   - >
     if [[ "$CC" == "gcc" ]]; then
-      make;
-      make test;
+      make -j;
+      make -j test;
     fi
 
 script:
